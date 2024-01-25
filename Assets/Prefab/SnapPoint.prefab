@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5613802279805153445}
   - component: {fileID: 5619106418381923600}
   - component: {fileID: 5018211799106326313}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: SnapPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
