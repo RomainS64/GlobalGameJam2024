@@ -17,6 +17,7 @@ public class JesterManipulation : MonoBehaviour
     private float clickStartTime;
 
     private SnapPoint linkedSnapPoint = null;
+
     void Start()
     {
         clickableObject = GetComponent<ClickableObject>();
