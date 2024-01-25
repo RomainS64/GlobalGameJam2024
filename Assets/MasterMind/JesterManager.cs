@@ -22,6 +22,7 @@ public class JesterManager
         authorizedProperties = new List<EAuthorizedProperty>();
     }
 
+    public int AuthorizedCount() => authorizedProperties.Count;
     public void AuthorizeProperty(EAuthorizedProperty property)
     {
         if (!authorizedProperties.Contains(property))

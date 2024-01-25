@@ -8,6 +8,8 @@ public class KingManager : MonoSingleton<KingManager>
 
     public void KingReaction(int goodness,int maxGoodness)
     {
-        animator.SetInteger("State",goodness);
+        float inverseLerp = Mathf.InverseLerp(0, maxGoodness, goodness);
+        
+        animator.SetInteger("State",(int)Mathf.Lerp(0,7,inverseLerp));
     }
 }

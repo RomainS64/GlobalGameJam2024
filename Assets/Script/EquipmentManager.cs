@@ -64,16 +64,15 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
     }
     public void Validate()
     {
-        JesterManager jesterMgr = JesterManager.GetInstance();
-        StartCoroutine(KingValidation(JesterMgr.CheckCombinaison(linkedJester.PlayerJester)));
+        StartCoroutine(KingValidation(JesterManager.GetInstance().CheckCombinaison(linkedJester.PlayerJester),JesterManager.GetInstance().AuthorizedCount()));
     }
 
-    IEnumerator KingValidation(int value)
+    IEnumerator KingValidation(int value,int max)
     {
         HideEquipmentUI();
         cameraManager.ZoomOut();
         linkedJester.ResetPosition();
-        KingManager.Instance.KingReaction(value,7);
+        KingManager.Instance.KingReaction(value,max);
         yield return new WaitForSeconds(3f);
         
         GameManager.Instance.IsInJesterSelection = true;

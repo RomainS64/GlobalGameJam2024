@@ -59,6 +59,7 @@ public class UISelectable : MonoBehaviour
         selected = (selected + 1) % selectables.Length;
         Debug.Log(gameObject.name + "set to "+selected);
         OnModified?.Invoke(selected);
+        image.sprite = selectables[selected].sprite;
     }
 
     public void GoPrevious()
@@ -66,5 +67,6 @@ public class UISelectable : MonoBehaviour
         selected = selected - 1< 0?selectables.Length-1:selected-1;
         Debug.Log(gameObject.name + "set to "+selected);
         OnModified?.Invoke(selected);
+        image.sprite = selectables[selected].sprite;
     }
 }
