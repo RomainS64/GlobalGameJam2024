@@ -5,6 +5,7 @@ using UnityEngine;
 public class SnapPoint : MonoBehaviour
 {
     public bool IsHolded { get; set; } = false;
+
     void Start()
     {
         
@@ -13,6 +14,6 @@ public class SnapPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
