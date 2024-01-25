@@ -14,6 +14,7 @@ public class ClickableObject : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit,100f,~LayerMask.NameToLayer("Snap"),QueryTriggerInteraction.Ignore))
             {
+                
                 if (hit.collider.gameObject == gameObject)
                 {
                     OnClickStart?.Invoke();

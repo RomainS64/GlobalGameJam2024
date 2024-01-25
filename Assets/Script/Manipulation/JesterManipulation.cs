@@ -53,8 +53,6 @@ public class JesterManipulation : MonoBehaviour
             LayerMask snapLayer = LayerMask.NameToLayer("Snap");
             if (Physics.Raycast(ray,out hit,50f))
             {
-                
-                
                 var layer = hit.transform.gameObject.layer;
                 if (layer != ignoreLayer && layer != snapLayer)
                 {
@@ -80,7 +78,7 @@ public class JesterManipulation : MonoBehaviour
                     }
                 }
             }
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
     }
 
