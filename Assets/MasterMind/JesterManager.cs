@@ -8,7 +8,9 @@ public enum EAuthorizedProperty
     Pompom,
     Voice,
     Mask,
-    Action
+    FartOrBallsKick,
+    DanceOrFall,
+    CreamOrRake
 }
 public class JesterManager
 {
@@ -80,11 +82,25 @@ public class JesterManager
                     JesterToFind.AddProperty(maskProperty);
                     break;
 
-                case EAuthorizedProperty.Action:
-                    ActionProperty actionProperty = new ActionProperty();
-                    IJesterPropertyInfo infoA = new SAction(EAction.Dance);
-                    actionProperty.Info = infoA;
-                    JesterToFind.AddProperty(actionProperty);
+                case EAuthorizedProperty.FartOrBallsKick:
+                    FartOrBallKickProperty fartProperty = new FartOrBallKickProperty();
+                    IJesterPropertyInfo infoF = new SFartOrBallKick(EFartOrBallKick.Fart);
+                    fartProperty.Info = infoF;
+                    JesterToFind.AddProperty(fartProperty);
+                    break;
+
+                case EAuthorizedProperty.DanceOrFall:
+                    DanceOrFallProperty danceProperty = new DanceOrFallProperty();
+                    IJesterPropertyInfo infoD = new SDanceOrFall(EDanceOrFall.Fall);
+                    danceProperty.Info = infoD;
+                    JesterToFind.AddProperty(danceProperty);
+                    break;
+
+                case EAuthorizedProperty.CreamOrRake:
+                    CreamOrRakeProperty rakeProperty = new CreamOrRakeProperty();
+                    IJesterPropertyInfo infoR = new SCreamOrRake(ECreamOrRake.CreamPie);
+                    rakeProperty.Info = infoR;
+                    JesterToFind.AddProperty(rakeProperty);
                     break;
             }
             

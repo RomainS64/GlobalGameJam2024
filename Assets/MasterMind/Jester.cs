@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Dependencies.Sqlite;
@@ -14,15 +15,45 @@ public class Jester
 
     public void AddProperty(IJesterProperty property)
     {
-        if (!jesterProperties.Contains(property))
+        bool newProperty = true;
+        foreach (IJesterProperty curProperty in jesterProperties)
+        {
+            if (curProperty.GetType() == property.GetType())
+            {
+                newProperty = false;
+            }
+            
+        }
+        if (newProperty)
         {
             jesterProperties.Add(property);
         }
+
     }
 
     public void SetProperty(IJesterPropertyInfo _info)
     {
-        //Change a property ( like color )
+        foreach(IJesterProperty curProperty in jesterProperties)
+        {
+            if (curProperty.Info.GetType() == _info.GetType() )
+            {
+                curProperty.Info = _info;
+                break;
+            }
+        }
+    }
+
+    public void RemoveProperty(IJesterProperty property)
+    {
+        int count = 0;
+        foreach (IJesterProperty curProperty in jesterProperties)
+        {
+            if (curProperty.GetType() == property.GetType())
+            {
+                jesterProperties.RemoveAt(count);
+            }
+            count++;
+        }
     }
 
     public int CompareJester(Jester jester)
@@ -33,7 +64,7 @@ public class Jester
         }
         int goodPropertiesCount = 0;
 
-        List<IJesterProperty> tmpJesterProperties = jester.jesterProperties;
+        List<IJesterProperty> tmpJesterProperties = new List<IJesterProperty>(jester.jesterProperties);
         foreach (IJesterProperty curProperty in this.jesterProperties)
         {
             foreach (IJesterProperty comparedProperty in tmpJesterProperties)
