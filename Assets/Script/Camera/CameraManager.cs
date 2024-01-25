@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Cinemachine;
 using UnityEngine;
@@ -12,7 +13,10 @@ public class CameraManager : MonoBehaviour
 
     [SerializeField] private Transform defaultCameraTarget;
     [SerializeField] private Transform zoomCameraTarget;
+    [SerializeField] private Transform lookUpTarget;
     [SerializeField] private Vector3 zoomCameraTargetOffset;
+
+    [SerializeField] private AnimationCurve speedCamera;
 
     public float smoothRate = 3f;
     private CinemachineTrackedDolly cinemachineZoomTrackedDolly;
@@ -21,7 +25,7 @@ public class CameraManager : MonoBehaviour
 
     void Awake()
     {
-        defaultCamera.LookAt = defaultCameraTarget;
+        lookUpTarget.position = defaultCameraTarget.position;
         trailZoom.m_Waypoints[0].position = defaultCamera.transform.position;
         trailZoom.m_Waypoints[trailZoom.m_Waypoints.Length-1].position = defaultCameraTarget.position;
         cinemachineZoomTrackedDolly = defaultCamera.GetCinemachineComponent<CinemachineTrackedDolly>();
@@ -65,28 +69,32 @@ public class CameraManager : MonoBehaviour
 
     IEnumerator EnumeratorZoomIn()
     {
-        defaultCamera.LookAt = zoomCameraTarget;
+        //defaultCamera.LookAt = zoomCameraTarget;
         trailZoom.m_Waypoints[trailZoom.m_Waypoints.Length - 1].position = zoomCameraTarget.position + zoomCameraTargetOffset;
 
         float waypointsLenght = (float)trailZoom.m_Waypoints.Length;
         float alpha = 0;
         while (alpha < waypointsLenght)
         {
-            alpha += .1f * smoothRate * Time.deltaTime;
-            cinemachineZoomTrackedDolly.m_PathPosition = alpha;
+            alpha += Time.deltaTime;
+            float speed = speedCamera.Evaluate(alpha / waypointsLenght) * alpha;
+            lookUpTarget.position = Vector3.Lerp(lookUpTarget.position, zoomCameraTarget.position, speed);
+            Debug.Log("Alpha " + alpha);
+            cinemachineZoomTrackedDolly.m_PathPosition = speed;
             yield return null;
         }
     }
 
     IEnumerator EnumeratorZoomOut()
     {
-        defaultCamera.LookAt = defaultCameraTarget;
         float alpha = (float)trailZoom.m_Waypoints.Length;
 
         while (alpha > 0)
         {
             alpha -= .1f * smoothRate * Time.deltaTime;
-            cinemachineZoomTrackedDolly.m_PathPosition = alpha;
+            float speed = speedCamera.Evaluate(alpha / trailZoom.m_Waypoints.Length) * alpha;
+            lookUpTarget.position = Vector3.Lerp(defaultCameraTarget.position, lookUpTarget.position, speed);
+            cinemachineZoomTrackedDolly.m_PathPosition = speed;
             yield return null;
         }
     }

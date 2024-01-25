@@ -957,8 +957,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11355192, y: -0.000000017095093, z: 0.0000000019538178, w: 0.99353206}
-  m_LocalPosition: {x: 0, y: 5.32, z: -20.970001}
+  m_LocalRotation: {x: 0.05973987, y: -0.10641695, z: 0.0064053447, w: 0.9925047}
+  m_LocalPosition: {x: 3.6869318, y: 1.4711599, z: -12.275548}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1814,12 +1814,20 @@ PrefabInstance:
       value: CameraManager
       objectReference: {fileID: 0}
     - target: {fileID: 4651194670173728022, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9925047
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651194670173728022, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.05973987
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651194670173728022, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000017095093
+      value: -0.10641695
       objectReference: {fileID: 0}
     - target: {fileID: 4651194670173728022, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000019538178
+      value: 0.0064053447
       objectReference: {fileID: 0}
     - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
       propertyPath: zoomCameraTarget
@@ -1829,6 +1837,78 @@ PrefabInstance:
       propertyPath: defaultCameraTarget
       value: 
       objectReference: {fileID: 1825107454}
+    - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: speedCamera.m_Curve.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: speedCamera.m_Curve.Array.data[1].time
+      value: 0.06055808
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: speedCamera.m_Curve.Array.data[2].time
+      value: 0.56112325
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: speedCamera.m_Curve.Array.data[3].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: speedCamera.m_Curve.Array.data[1].value
+      value: 0.27396533
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: speedCamera.m_Curve.Array.data[2].value
+      value: 0.31730407
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: speedCamera.m_Curve.Array.data[3].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: speedCamera.m_Curve.Array.data[1].inSlope
+      value: 1.0377829
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: speedCamera.m_Curve.Array.data[2].inSlope
+      value: 0.3483352
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: speedCamera.m_Curve.Array.data[3].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: speedCamera.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: speedCamera.m_Curve.Array.data[1].outSlope
+      value: 1.0377829
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: speedCamera.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: speedCamera.m_Curve.Array.data[2].outSlope
+      value: 0.3483352
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: speedCamera.m_Curve.Array.data[3].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: speedCamera.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677544498009509540, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: speedCamera.m_Curve.Array.data[2].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 9166681492546935616, guid: 7e57cd5b522f99c4ba7e80f0ad0103ed, type: 3}
+      propertyPath: m_PathPosition
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
