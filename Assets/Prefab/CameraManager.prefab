@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417026802256602882}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11355192, y: 0.000000017095092, z: -0.0000000019538176, w: 0.99353206}
+  m_LocalRotation: {x: 0.11355192, y: -0.00000001709799, z: 0.000000001954149, w: 0.99353206}
   m_LocalPosition: {x: 0, y: 7.4, z: -18.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
+  m_LookAt: {fileID: 4156172304850490333}
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60.000004
@@ -72,6 +72,37 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 5139044483475102111}
+--- !u!1 &2070742591887969770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4156172304850490333}
+  m_Layer: 0
+  m_Name: LookAtTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4156172304850490333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070742591887969770}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.63, z: 4.72}
+  m_LocalScale: {x: 4.106558, y: 1, z: 3.68546}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 213161975901414061}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4132491516262403864
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,6 +135,7 @@ Transform:
   m_Children:
   - {fileID: 4651194670173728022}
   - {fileID: 4507278496450633010}
+  - {fileID: 4156172304850490333}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8677544498009509540
@@ -122,7 +154,59 @@ MonoBehaviour:
   trailZoom: {fileID: 1509402037351897833}
   defaultCameraTarget: {fileID: 0}
   zoomCameraTarget: {fileID: 0}
+  lookUpTarget: {fileID: 4156172304850490333}
   zoomCameraTargetOffset: {x: 0, y: 2, z: -3}
+  speedCamera:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.3159144
+      value: 0.24336964
+      inSlope: 0.7719168
+      outSlope: 0.7719168
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.44135317
+      value: 0.71010923
+      inSlope: 1.5410348
+      outSlope: 1.5410348
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6661855
+      value: 0.93280405
+      inSlope: 0.43465728
+      outSlope: 0.43465728
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.30304372
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   smoothRate: 5
 --- !u!1 &7098449010716232991
 GameObject:
@@ -210,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 1509402037351897833}
-  m_PathPosition: -0.02416971
+  m_PathPosition: 0
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
