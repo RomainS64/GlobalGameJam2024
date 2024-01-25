@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class Jester
 {
+    public Jester()
+    {
+        jesterProperties = new List<IJesterProperty>();
+    }
+
     private List<IJesterProperty> jesterProperties;
 
     public void AddProperty(IJesterProperty property)
@@ -20,35 +25,28 @@ public class Jester
         //Change a property ( like color )
     }
 
-    public static bool operator ==(Jester jester1, Jester jester2)
+    public int CompareJester(Jester jester)
     {
-        if (jester1 == null || jester2 == null || jester1.jesterProperties.Count != jester2.jesterProperties.Count)
+        if(jester == null)
         {
-            return false;
+            return 0;
         }
-        List<IJesterProperty> tmpJesterProperties = jester2.jesterProperties;
-        bool found = false;
-        foreach(IJesterProperty curProperty in jester1.jesterProperties)
+        int goodPropertiesCount = 0;
+
+        List<IJesterProperty> tmpJesterProperties = jester.jesterProperties;
+        foreach (IJesterProperty curProperty in this.jesterProperties)
         {
             foreach (IJesterProperty comparedProperty in tmpJesterProperties)
             {
-                if(curProperty == comparedProperty)
+                if (curProperty.CompareProperty(comparedProperty.Info))
                 {
                     tmpJesterProperties.Remove(comparedProperty);
-                    found = true;
+                    goodPropertiesCount++;
                     break;
                 }
             }
-            if (!found)
-            {
-                return false;
-            }
         }
-        return tmpJesterProperties.Count == 0;
-    }
 
-    public static bool operator !=(Jester jester1, Jester jester2)
-    {
-        return !(jester1 == jester2);
+        return goodPropertiesCount;
     }
 }
