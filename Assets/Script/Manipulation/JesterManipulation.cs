@@ -11,6 +11,7 @@ public class JesterManipulation : MonoBehaviour
     [SerializeField] private float snapLerpValue;
     [SerializeField] private Vector3 offset;
     [SerializeField] private float clickMaxDuration = 0.2f;
+    private CameraManager cameraManager;
     private ClickableObject clickableObject;
     private Rigidbody rigidBody;
     private IEnumerator followMouseCoroutine;
@@ -22,10 +23,18 @@ public class JesterManipulation : MonoBehaviour
     {
         clickableObject = GetComponent<ClickableObject>();
         rigidBody = GetComponent<Rigidbody>();
+        cameraManager = FindObjectOfType<CameraManager>();
         clickableObject.OnClickStart += OnJesterSelected;
         clickableObject.OnClickStop += OnJesterUnSelected;
     }
 
+    private IEnumerator GoToSelection()
+    {
+        GameManager.Instance.IsInJesterSelection = false;
+        cameraManager.ZoomIn();
+        yield return new WaitForSeconds(3.2f);
+        EquipmentManager.Instance.DisplayEquipmentUI();
+    }
     private void OnJesterUnSelected()
     {
         if (Time.time - clickStartTime < clickMaxDuration)
@@ -37,6 +46,11 @@ public class JesterManipulation : MonoBehaviour
         {
             StopCoroutine(followMouseCoroutine);
             followMouseCoroutine = null;
+        }
+        if (linkedSnapPoint != null)
+        {
+            transform.position = linkedSnapPoint.transform.position;
+            StartCoroutine(GoToSelection());
         }
     }
 
