@@ -19,18 +19,9 @@ public struct SColor : IJesterPropertyInfo
 
     public EColor Color;
 
-    public static bool operator ==(SColor color1, SColor color2)
+    public bool CompareColor(SColor color)
     {
-        if (color1 == null || color2 == null)
-        {
-            return false;
-        }
-        return color1.Color == color2.Color;
-    }
-
-    public static bool operator !=(SColor color1, SColor color2)
-    {
-        return !(color1 == color2);
+        return this.Color == color.Color;
     }
 }
 public class ColorProperty : IJesterProperty
@@ -39,6 +30,13 @@ public class ColorProperty : IJesterProperty
     public IJesterPropertyInfo Info { get => color; set => color = (SColor)value; }
     public bool CompareProperty(IJesterPropertyInfo _info)
     {
-        return color == (SColor)_info;
+        if (_info is SColor)
+        {
+            return color.CompareColor((SColor)_info);
+        }
+        else
+        {
+            return false;
+        }
     }
 }
