@@ -77,17 +77,16 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         voiceSelectable.IsLocked = false;
         
         JesterMgr.GenerateCombinaisonToFind();
-        
-        Debug.Log("Jester perfection : "+JesterMgr.CheckCombinaison(linkedJester.PlayerJester));
-           
-        StartCoroutine(KingValidation(true));
+
+        StartCoroutine(KingValidation(JesterMgr.CheckCombinaison(linkedJester.PlayerJester)));
     }
 
-    IEnumerator KingValidation(bool isValid)
+    IEnumerator KingValidation(int value)
     {
         HideEquipmentUI();
         cameraManager.ZoomOut();
         linkedJester.ResetPosition();
+        KingManager.Instance.KingReaction(value,7);
         yield return new WaitForSeconds(3f);
         
         GameManager.Instance.IsInJesterSelection = true;
