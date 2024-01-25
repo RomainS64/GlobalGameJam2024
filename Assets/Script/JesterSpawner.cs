@@ -15,7 +15,7 @@ public class JesterSpawner : MonoSingleton<JesterSpawner>
 
     private void Start()
     {
-        SpawnJester(8);
+        
     }
 
     public void SpawnJester(int jesterCount)

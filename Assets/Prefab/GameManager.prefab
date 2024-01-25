@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2130278964771180557}
   - component: {fileID: 4609338841374596389}
+  - component: {fileID: 5048568330809629697}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,3 +45,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ec038bc484f6d468acd87c6f239bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5048568330809629697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898066473762416939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d189713ff37333d47bfa27b03c6ae158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rounds:
+  - authorizedProperties: 00000000
+    numberOfJesters: 4
+  - authorizedProperties: 0000000001000000
+    numberOfJesters: 7
