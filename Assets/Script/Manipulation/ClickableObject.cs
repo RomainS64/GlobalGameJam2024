@@ -8,7 +8,7 @@ public class ClickableObject : MonoBehaviour
     private bool isHolding = false;
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && GameManager.Instance.IsInJesterSelection)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
