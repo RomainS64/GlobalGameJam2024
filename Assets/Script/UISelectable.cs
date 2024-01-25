@@ -13,34 +13,56 @@ public struct Selectable
 }
 public class UISelectable : MonoBehaviour
 {
+    public Action<int> OnModified;
     [SerializeField] private Image image;
     [SerializeField] private Sprite lockedSprite;
     [SerializeField] private Selectable[] selectables;
     [SerializeField] private Button previousButton;
     [SerializeField] private Button nextButton;
     private int selected = 0;
-    public bool IsLocked { get; set; } = true;
-    void Start()
+
+    private bool isLock = true;
+    public bool IsLocked
     {
-        if (IsLocked)
+        get => isLock;
+        set
         {
-            image.sprite = lockedSprite;
-            previousButton.gameObject.SetActive(false);
-            nextButton.gameObject.SetActive(false);
-        }
-        else
-        {
-            image.sprite = selectables[selected].sprite;
+            isLock = value;
+            if (value)
+            {
+                image.sprite = lockedSprite;
+                previousButton.gameObject.SetActive(false);
+                nextButton.gameObject.SetActive(false);
+            }
+            else
+            {
+                image.sprite = selectables[selected].sprite;
+            }
         }
     }
 
+    private void Start()
+    {
+        nextButton.onClick.AddListener(GoNext);
+        previousButton.onClick.AddListener(GoPrevious);
+    }
+
+    public void SetCurrent(int current = 0)
+    {
+        selected = current;
+        image.sprite = selectables[selected].sprite;
+    }
     public void GoNext()
     {
         selected = (selected + 1) % selectables.Length;
+        Debug.Log(gameObject.name + "set to "+selected);
+        OnModified?.Invoke(selected);
     }
 
     public void GoPrevious()
     {
         selected = selected - 1< 0?selectables.Length-1:selected-1;
+        Debug.Log(gameObject.name + "set to "+selected);
+        OnModified?.Invoke(selected);
     }
 }

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum ECreamOrRake
 {
+    None = default,
     CreamPie,
     Rake
 }
 public struct SCreamOrRake : IJesterPropertyInfo
 {
-    public SCreamOrRake(ECreamOrRake _action)
+    public SCreamOrRake(ECreamOrRake _action = ECreamOrRake.None)
     {
         Action = _action;
     }

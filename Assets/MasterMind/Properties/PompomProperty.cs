@@ -5,7 +5,7 @@ using UnityEngine;
 
 public struct SNumberOfPompom : IJesterPropertyInfo
 {
-    public SNumberOfPompom(int _nbPompom)
+    public SNumberOfPompom(int _nbPompom = 0)
     {
         NbPompom = _nbPompom;
     }
@@ -25,11 +25,9 @@ public class PompomProperty : IJesterProperty
     {
         if (_info is SNumberOfPompom)
         {
-            return nbPompom.ComparePompom((SNumberOfPompom)Info);
+            return nbPompom.ComparePompom((SNumberOfPompom)_info);
         }
-        else
-        {
-            return false;
-        }
+        return false;
+        
     }
 }

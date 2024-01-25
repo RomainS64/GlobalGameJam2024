@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum EFartOrBallKick
 {
+    None = default,
     Fart,
     BallsKick
 }
 public struct SFartOrBallKick : IJesterPropertyInfo
 {
-    public SFartOrBallKick(EFartOrBallKick _action)
+    public SFartOrBallKick(EFartOrBallKick _action = EFartOrBallKick.None)
     {
         Action = _action;
     }

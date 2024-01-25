@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class JesterSpawner : MonoBehaviour
+public class JesterSpawner : MonoSingleton<JesterSpawner>
 {
     [SerializeField] private bool forceMobile;
     [SerializeField] private bool forceDesktop;
@@ -23,6 +23,14 @@ public class JesterSpawner : MonoBehaviour
         for (int i = 0; i < jesterCount; i++)
         {
             Instantiate(jesterPrefab, GetRandomPoint(), Quaternion.identity);
+        }
+    }
+
+    public void DeleteAllJester()
+    {
+        foreach (JesterEquipmentHandler jester in FindObjectsOfType<JesterEquipmentHandler>())
+        {
+            Destroy(jester.gameObject);
         }
     }
 

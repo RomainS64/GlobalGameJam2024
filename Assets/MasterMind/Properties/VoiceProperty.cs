@@ -11,7 +11,7 @@ public enum EVoice
 }
 public struct SVoice : IJesterPropertyInfo
 {
-    public SVoice(EVoice _voice)
+    public SVoice(EVoice _voice = EVoice.Neutral)
     {
         Voice = _voice;
     }
