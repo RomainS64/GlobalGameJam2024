@@ -30,6 +30,13 @@ public class ColorProperty : IJesterProperty
     public IJesterPropertyInfo Info { get => color; set => color = (SColor)value; }
     public bool CompareProperty(IJesterPropertyInfo _info)
     {
-        return color.CompareColor((SColor)_info);
+        if (_info is SColor)
+        {
+            return color.CompareColor((SColor)_info);
+        }
+        else
+        {
+            return false;
+        }
     }
 }

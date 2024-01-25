@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum EVoice
 {
@@ -28,6 +29,13 @@ public class VoiceProperty : IJesterProperty
     public IJesterPropertyInfo Info { get => voice; set => voice = (SVoice)value; }
     public bool CompareProperty(IJesterPropertyInfo _info)
     {
-        return voice.CompareVoice((SVoice)_info);
+        if (_info is SVoice)
+        {
+            return voice.CompareVoice((SVoice)_info);
+        }
+        else
+        {
+            return false;
+        }
     }
 }

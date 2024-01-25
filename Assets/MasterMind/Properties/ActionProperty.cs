@@ -19,9 +19,9 @@ public struct SAction : IJesterPropertyInfo
 
     public EAction Action;
 
-    public bool CompareAction(SAction mask)
+    public bool CompareAction(SAction action)
     {
-        return this.Action == mask.Action;
+        return this.Action == action.Action;
     }
 }
 public class ActionProperty : IJesterProperty
@@ -30,6 +30,13 @@ public class ActionProperty : IJesterProperty
     public IJesterPropertyInfo Info { get => action; set => action = (SAction)value; }
     public bool CompareProperty(IJesterPropertyInfo _info)
     {
-        return action.CompareAction((SAction)_info);
+        if (_info is SAction)
+        {
+            return action.CompareAction((SAction)_info);
+        }
+        else
+        {
+            return false;
+        }
     }
 }

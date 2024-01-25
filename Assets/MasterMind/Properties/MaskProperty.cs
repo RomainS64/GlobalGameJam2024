@@ -30,6 +30,13 @@ public class MaskProperty : IJesterProperty
     public IJesterPropertyInfo Info { get => mask; set => mask = (SMask)value; }
     public bool CompareProperty(IJesterPropertyInfo _info)
     {
-        return mask.CompareMask((SMask)_info);
+        if (_info is SMask)
+        {
+            return mask.CompareMask((SMask)_info);
+        }
+        else
+        {
+            return false;
+        }
     }
 }

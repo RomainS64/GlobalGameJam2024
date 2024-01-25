@@ -3,26 +3,33 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 
-public struct NumberOfPompom : IJesterPropertyInfo
+public struct SNumberOfPompom : IJesterPropertyInfo
 {
-    public NumberOfPompom(int _nbPompom)
+    public SNumberOfPompom(int _nbPompom)
     {
         NbPompom = _nbPompom;
     }
 
     public int NbPompom;
 
-    public bool ComparePompom(NumberOfPompom numberOfPompom)
+    public bool ComparePompom(SNumberOfPompom numberOfPompom)
     {
         return this.NbPompom == numberOfPompom.NbPompom;
     }
 }
 public class PompomProperty : IJesterProperty 
 { 
-    private NumberOfPompom nbPompom;
-    public IJesterPropertyInfo Info { get => nbPompom; set => nbPompom = (NumberOfPompom)value; }
+    private SNumberOfPompom nbPompom;
+    public IJesterPropertyInfo Info { get => nbPompom; set => nbPompom = (SNumberOfPompom)value; }
     public bool CompareProperty(IJesterPropertyInfo _info)
     {
-        return nbPompom.ComparePompom((NumberOfPompom)Info);
+        if (_info is SNumberOfPompom)
+        {
+            return nbPompom.ComparePompom((SNumberOfPompom)Info);
+        }
+        else
+        {
+            return false;
+        }
     }
 }
