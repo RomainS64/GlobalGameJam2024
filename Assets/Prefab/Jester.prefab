@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7164968570202002334}
   - component: {fileID: 1766645040737547692}
   - component: {fileID: 7678267897814841172}
+  - component: {fileID: 505971561863220489}
   - component: {fileID: 8116738195511187791}
   m_Layer: 6
   m_Name: Jester
@@ -141,6 +142,18 @@ MonoBehaviour:
   snapLerpValue: 0.1
   offset: {x: 0, y: -1, z: 0}
   clickMaxDuration: 0.2
+--- !u!114 &505971561863220489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2817368416079371697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18e640d71b729e41a24f3c89e508aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &8116738195511187791
 Rigidbody:
   m_ObjectHideFlags: 0

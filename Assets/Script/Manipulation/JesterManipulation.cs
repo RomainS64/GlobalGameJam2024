@@ -14,6 +14,7 @@ public class JesterManipulation : MonoBehaviour
     private CameraManager cameraManager;
     private ClickableObject clickableObject;
     private Rigidbody rigidBody;
+    private JesterEquipmentHandler jesterEquipmentHandler;
     private IEnumerator followMouseCoroutine;
     private float clickStartTime;
 
@@ -24,16 +25,22 @@ public class JesterManipulation : MonoBehaviour
         clickableObject = GetComponent<ClickableObject>();
         rigidBody = GetComponent<Rigidbody>();
         cameraManager = FindObjectOfType<CameraManager>();
+        jesterEquipmentHandler = GetComponent<JesterEquipmentHandler>();
         clickableObject.OnClickStart += OnJesterSelected;
         clickableObject.OnClickStop += OnJesterUnSelected;
     }
 
     private IEnumerator GoToSelection()
     {
+        if (linkedSnapPoint != null)
+        {
+            linkedSnapPoint.IsHolded = false;
+            linkedSnapPoint = null;
+        }
         GameManager.Instance.IsInJesterSelection = false;
         cameraManager.ZoomIn();
         yield return new WaitForSeconds(3.2f);
-        EquipmentManager.Instance.DisplayEquipmentUI();
+        EquipmentManager.Instance.DisplayEquipmentUI(jesterEquipmentHandler);
     }
     private void OnJesterUnSelected()
     {
