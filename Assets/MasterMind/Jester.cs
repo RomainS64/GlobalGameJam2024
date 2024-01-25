@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Dependencies.Sqlite;
@@ -5,50 +6,78 @@ using UnityEngine;
 
 public class Jester
 {
+    public Jester()
+    {
+        jesterProperties = new List<IJesterProperty>();
+    }
+
     private List<IJesterProperty> jesterProperties;
 
     public void AddProperty(IJesterProperty property)
     {
-        if (!jesterProperties.Contains(property))
+        bool newProperty = true;
+        foreach (IJesterProperty curProperty in jesterProperties)
+        {
+            if (curProperty.GetType() == property.GetType())
+            {
+                newProperty = false;
+            }
+            
+        }
+        if (newProperty)
         {
             jesterProperties.Add(property);
         }
+
     }
 
     public void SetProperty(IJesterPropertyInfo _info)
     {
-        //Change a property ( like color )
+        foreach(IJesterProperty curProperty in jesterProperties)
+        {
+            if (curProperty.Info.GetType() == _info.GetType() )
+            {
+                curProperty.Info = _info;
+                break;
+            }
+        }
     }
 
-    public static bool operator ==(Jester jester1, Jester jester2)
+    public void RemoveProperty(IJesterProperty property)
     {
-        if (jester1 == null || jester2 == null || jester1.jesterProperties.Count != jester2.jesterProperties.Count)
+        int count = 0;
+        foreach (IJesterProperty curProperty in jesterProperties)
         {
-            return false;
+            if (curProperty.GetType() == property.GetType())
+            {
+                jesterProperties.RemoveAt(count);
+            }
+            count++;
         }
-        List<IJesterProperty> tmpJesterProperties = jester2.jesterProperties;
-        bool found = false;
-        foreach(IJesterProperty curProperty in jester1.jesterProperties)
+    }
+
+    public int CompareJester(Jester jester)
+    {
+        if(jester == null)
+        {
+            return 0;
+        }
+        int goodPropertiesCount = 0;
+
+        List<IJesterProperty> tmpJesterProperties = new List<IJesterProperty>(jester.jesterProperties);
+        foreach (IJesterProperty curProperty in this.jesterProperties)
         {
             foreach (IJesterProperty comparedProperty in tmpJesterProperties)
             {
-                if(curProperty == comparedProperty)
+                if (curProperty.CompareProperty(comparedProperty.Info))
                 {
                     tmpJesterProperties.Remove(comparedProperty);
-                    found = true;
+                    goodPropertiesCount++;
                     break;
                 }
             }
-            if (!found)
-            {
-                return false;
-            }
         }
-        return tmpJesterProperties.Count == 0;
-    }
 
-    public static bool operator !=(Jester jester1, Jester jester2)
-    {
-        return !(jester1 == jester2);
+        return goodPropertiesCount;
     }
 }
