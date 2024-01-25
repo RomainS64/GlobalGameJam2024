@@ -10,14 +10,25 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
     private CameraManager cameraManager;
     private JesterEquipmentHandler linkedJester = null;
     
-    [SerializeField] private UISelectable colorSelectable;
-    [SerializeField] private UISelectable creamOrRakeSelectable;
-    [SerializeField] private UISelectable danceOrFallSelectable;
-    [SerializeField] private UISelectable fartOrBallKickSelctable;
-    [SerializeField] private UISelectable maskSelectable;
-    [SerializeField] private UISelectable pompomSelectable;
-    [SerializeField] private UISelectable voiceSelectable;
+    [SerializeField] public UISelectable colorSelectable;
+    [SerializeField] public UISelectable creamOrRakeSelectable;
+    [SerializeField] public UISelectable danceOrFallSelectable;
+    [SerializeField] public UISelectable fartOrBallKickSelctable;
+    [SerializeField] public UISelectable maskSelectable;
+    [SerializeField] public UISelectable pompomSelectable;
+    [SerializeField] public UISelectable voiceSelectable;
     
+
+    public void LockAllSelectables()
+    {
+        colorSelectable.IsLocked = true;
+        creamOrRakeSelectable.IsLocked = true;
+        danceOrFallSelectable.IsLocked = true;
+        fartOrBallKickSelctable.IsLocked = true;
+        maskSelectable.IsLocked = true;
+        pompomSelectable.IsLocked = true;
+        voiceSelectable.IsLocked = true;
+    }
     private void Start()
     {
         HideEquipmentUI();
@@ -53,31 +64,7 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
     }
     public void Validate()
     {
-        JesterManager JesterMgr = JesterManager.GetInstance();
-        if (JesterMgr == null)
-        {
-            Debug.Log("Unable to create Jester Manager");
-            return;
-        }
-
-        //Define what property to use for the round
-        JesterMgr.AuthorizeProperty(EAuthorizedProperty.Color);
-        colorSelectable.IsLocked = false;
-        JesterMgr.AuthorizeProperty(EAuthorizedProperty.DanceOrFall);
-        danceOrFallSelectable.IsLocked = false;
-        JesterMgr.AuthorizeProperty(EAuthorizedProperty.CreamOrRake);
-        creamOrRakeSelectable.IsLocked = false;
-        JesterMgr.AuthorizeProperty(EAuthorizedProperty.FartOrBallsKick);
-        fartOrBallKickSelctable.IsLocked = false;
-        JesterMgr.AuthorizeProperty(EAuthorizedProperty.Mask);
-        maskSelectable.IsLocked = false;
-        JesterMgr.AuthorizeProperty(EAuthorizedProperty.Pompom);
-        pompomSelectable.IsLocked = false;
-        JesterMgr.AuthorizeProperty(EAuthorizedProperty.Voice);
-        voiceSelectable.IsLocked = false;
-        
-        JesterMgr.GenerateCombinaisonToFind();
-
+        JesterManager jesterMgr = JesterManager.GetInstance();
         StartCoroutine(KingValidation(JesterMgr.CheckCombinaison(linkedJester.PlayerJester)));
     }
 

@@ -37,6 +37,8 @@ public class UISelectable : MonoBehaviour
             else
             {
                 image.sprite = selectables[selected].sprite;
+                previousButton.gameObject.SetActive(true);
+                nextButton.gameObject.SetActive(true);
             }
         }
     }
