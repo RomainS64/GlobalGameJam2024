@@ -10,9 +10,11 @@ public class JesterManipulation : MonoBehaviour
     [SerializeField] private float lerpValue;
     [SerializeField] private float snapLerpValue;
     [SerializeField] private Vector3 offset;
+    [SerializeField] private float clickMaxDuration = 0.2f;
     private ClickableObject clickableObject;
     private Rigidbody rigidBody;
     private IEnumerator followMouseCoroutine;
+    private float clickStartTime;
 
     private SnapPoint linkedSnapPoint = null;
     void Start()
@@ -25,6 +27,10 @@ public class JesterManipulation : MonoBehaviour
 
     private void OnJesterUnSelected()
     {
+        if (Time.time - clickStartTime < clickMaxDuration)
+        {
+            ClickJester();
+        }
         rigidBody.isKinematic = false;
         if (followMouseCoroutine != null)
         {
@@ -33,6 +39,10 @@ public class JesterManipulation : MonoBehaviour
         }
     }
 
+    private void ClickJester()
+    {
+        Debug.Log("Click Jester !");
+    }
     IEnumerator FollowMouse()
     {
         while (true)
@@ -68,7 +78,6 @@ public class JesterManipulation : MonoBehaviour
                         hitSnapPoint.IsHolded = true;
                         transform.position = Vector3.Lerp(transform.position,hit.transform.position,snapLerpValue);
                     }
-                    
                 }
             }
             yield return null;
@@ -85,6 +94,7 @@ public class JesterManipulation : MonoBehaviour
     }
     private void OnJesterSelected()
     {
+        clickStartTime = Time.time;
         rigidBody.isKinematic = true;
         if (followMouseCoroutine != null)
         {
