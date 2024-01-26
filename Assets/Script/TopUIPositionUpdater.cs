@@ -7,11 +7,23 @@ using UnityEngine;
 public class TopUIPositionUpdater : MonoBehaviour
 {
     private RectTransform rect;
-    private bool isPortrait = false;
+    private bool isPortrait = true;
 
     private void Start()
     {
         rect = GetComponent<RectTransform>();
+        if (Screen.height > Screen.width && !isPortrait)
+        {
+            isPortrait = true;
+            rect.anchoredPosition = new Vector2(rect.anchoredPosition.x,-250);
+
+        }
+
+        if (Screen.height <= Screen.width && isPortrait)
+        {
+            isPortrait = false;
+            rect.anchoredPosition = new Vector2(rect.anchoredPosition.x,-100);
+        }
     }
 
     void Update()
@@ -26,7 +38,7 @@ public class TopUIPositionUpdater : MonoBehaviour
         if (Screen.height <= Screen.width && isPortrait)
         {
             isPortrait = false;
-            rect.anchoredPosition = new Vector2(rect.anchoredPosition.x,-100);
+            rect.anchoredPosition = new Vector2(rect.anchoredPosition.x,0);
         }
     }
 }

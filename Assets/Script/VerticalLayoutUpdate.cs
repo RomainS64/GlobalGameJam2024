@@ -20,7 +20,7 @@ public class VerticalLayoutUpdate : MonoBehaviour
         if (Screen.height > Screen.width && !isPortrait)
         {
             isPortrait = true;
-            layoutGroup.spacing = -250;
+            layoutGroup.spacing = -50;
         }
 
         if (Screen.height <= Screen.width && isPortrait)
