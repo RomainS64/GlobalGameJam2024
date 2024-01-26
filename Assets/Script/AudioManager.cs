@@ -32,16 +32,22 @@ public class CustomMap<Key, Value>
     }
 }
 
+public enum EAudioSourceType
+{
+    SFX,
+    ENVIRONEMENT,
+    NONE,
+}
+
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoSingleton<AudioManager>
 {
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private CustomMap<EAudioSourceType, AudioSource> audioSources = new CustomMap<EAudioSourceType, AudioSource>();
     [SerializeField] private CustomMap<String, AudioClip> audioList;
 
     void Awake()
     {
         base.Awake();
-        audioSource = GetComponent<AudioSource>();
     }
 
     List<AudioClip> GetSongsByType(String type)
@@ -49,17 +55,35 @@ public class AudioManager : MonoSingleton<AudioManager>
       return audioList.GetValues(type.ToLower());
     }
 
-    public void PlaySongByTypeAndTag(string type, string tag)
+    public void PlaySongByTypeAndTag(string type, string tag, EAudioSourceType audioSourceType = 0)
     {
         List<AudioClip> audios = GetSongsByType(type);
-        audioSource.clip = audios.Find(song => song.name.ToLower().Contains(tag.ToLower()));
-        audioSource.Play();
+        audioSources.GetValues(audioSourceType)[0].clip = audios.Find(song => song.name.ToLower().Contains(tag.ToLower()));
+        audioSources.GetValues(audioSourceType)[0].Play();
     }
 
-    public void PlayRandomSongByType(string type)
+    public void PlayRandomSongByType(string type, EAudioSourceType audioSourceType = 0)
     {
         List<AudioClip> audios = GetSongsByType(type);
-        audioSource.clip = audios[Random.Range(0, audios.Count)];
-        audioSource.Play();
+        audioSources.GetValues(audioSourceType)[0].clip = audios[Random.Range(0, audios.Count)];
+        audioSources.GetValues(audioSourceType)[0].Play();
+    }
+
+    public void PauseSong(EAudioSourceType audioSourceType = 0)
+    {
+        AudioSource audio = audioSources.GetValues(audioSourceType)[0];
+        if (audio.isPlaying)
+        {
+            audioSources.GetValues(audioSourceType)[0].Pause();
+        }
+    }
+
+    public void ResumeSong(EAudioSourceType audioSourceType = 0)
+    {
+        AudioSource audio = audioSources.GetValues(audioSourceType)[0];
+        if (!audio.isPlaying)
+        {
+            audioSources.GetValues(audioSourceType)[0].Play();
+        }
     }
 }

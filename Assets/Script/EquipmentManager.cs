@@ -74,8 +74,8 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         cameraManager.ZoomOut();
 
         KingManager.Instance.KingReaction(value, max);
-
         yield return new WaitForSeconds(3f);
+        
         if (value == max)
         {
             GameManager.Instance.FinishRound(true);
