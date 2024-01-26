@@ -4,7 +4,6 @@ using UnityEngine;
 
 public enum EColor
 {
-    None = default,
     Blue,
     Yellow,
     Red,
@@ -13,7 +12,7 @@ public enum EColor
 }
 public struct SColor : IJesterPropertyInfo
 {
-    public SColor(EColor _color = EColor.None)
+    public SColor(EColor _color = EColor.Yellow)
     {
         Color = _color;
     }

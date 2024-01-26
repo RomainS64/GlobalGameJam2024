@@ -13,9 +13,11 @@ public struct Test
 }
 public class EquipmentManager : MonoSingleton<EquipmentManager>
 {
+    [SerializeField] private Animator trappeAnimator;
     [SerializeField] private GameObject equipmentCanvas;
     private CameraManager cameraManager;
     private JesterEquipmentHandler linkedJester = null;
+    
     
     [SerializeField] public UISelectable colorSelectable;
     [SerializeField] public UISelectable creamOrRakeSelectable;
@@ -43,6 +45,7 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         colorSelectable.OnModified += (int i) =>
         {
             linkedJester.PlayerJester.SetProperty(new SColor((EColor)i));
+            linkedJester.jesterEquipmentAnimator.SetInteger("color",i);
         };
         creamOrRakeSelectable.OnModified += (int i) =>
         {
@@ -59,10 +62,12 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         maskSelectable.OnModified += (int i) =>
         {
             linkedJester.PlayerJester.SetProperty(new SMask((EMask)i));   
+            linkedJester.jesterEquipmentAnimator.SetInteger("mask",i);
         };
         pompomSelectable.OnModified += (int i) =>
         {
             linkedJester.PlayerJester.SetProperty(new SNumberOfPompom(i));
+            linkedJester.jesterEquipmentAnimator.SetInteger("nbHat",i);
         };
         voiceSelectable.OnModified += (int i) =>
         {
@@ -89,6 +94,7 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         bool isCharabiaLong = Random.Range(0,2) == 0;
         AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Charabia"+(isCharabiaLong?"Long":"Court"));
         linkedJester.DoSpectacle();
+        
         HideEquipmentUI();
         yield return new WaitForSeconds(isCharabiaLong?charabiaLongTime:charabiaCourtTime);
         //int val = (int)MathF.Ceiling(Mathf.Lerp(0,7,Mathf.InverseLerp(0, value, max)));
@@ -128,6 +134,7 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         KingManager.Instance.KingReaction(val);
         
         yield return new WaitForSeconds(kingReactionTime);
+        
         if (value > GameManager.Instance.ValidationThreshold)
         {
             if (value == max)
@@ -138,10 +145,10 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
             {
                 AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Rire");
             }
-            
         }
         else
         {
+            trappeAnimator.SetTrigger("Open");
             AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Echec");
         }
         yield return new WaitForSeconds(endAnimationTime);
@@ -167,6 +174,10 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
             linkedJester.Die();
         }
         AudioManager.Instance.ResumeSong(EAudioSourceType.ENVIRONEMENT);
+        if (value <= GameManager.Instance.ValidationThreshold)
+        {
+            trappeAnimator.SetTrigger("Close");
+        }
     }
     public void DisplayEquipmentUI(JesterEquipmentHandler jester)
     {
