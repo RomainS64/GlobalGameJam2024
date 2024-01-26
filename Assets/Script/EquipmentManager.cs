@@ -88,6 +88,8 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         HideEquipmentUI();
         cameraManager.ZoomOut();
         linkedJester.ResetPosition();
+
+        AudioManager.Instance.PlayRandomSongByType("king");
         yield return new WaitForSeconds(3f);
         
         GameManager.Instance.IsInJesterSelection = true;
