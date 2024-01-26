@@ -110,7 +110,7 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         pompomSelectable.OnModified += (int i) =>
         {
             linkedJester.PlayerJester.SetProperty(new SNumberOfPompom(i));
-            linkedJester.jesterEquipmentAnimator.SetInteger("nbHat",i);
+            linkedJester.jesterEquipmentAnimator.SetInteger("nbHat",i+1);
         };
             propertiesFoundInRound.Add(nameof(SNumberOfPompom), new SFoundInLastRounds());
         voiceSelectable.OnModified += (int i) =>

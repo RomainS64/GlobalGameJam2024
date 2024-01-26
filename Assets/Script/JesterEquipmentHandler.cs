@@ -20,12 +20,12 @@ public class JesterEquipmentHandler : MonoBehaviour
     {
         spawner = FindObjectOfType<JesterSpawner>();
         PlayerJester = new Jester();
-        IJesterPropertyInfo info = new SColor((EColor)Random.Range(1,6));
+        IJesterPropertyInfo info = new SColor((EColor)Random.Range(0,5));
         colorProperty.Info = info;
         PlayerJester.AddProperty(colorProperty);
 
 
-        IJesterPropertyInfo infoP = new SNumberOfPompom(Random.Range(1,6));
+        IJesterPropertyInfo infoP = new SNumberOfPompom(Random.Range(0,5));
         pompomProperty.Info = infoP;
         PlayerJester.AddProperty(pompomProperty);
         
@@ -33,7 +33,7 @@ public class JesterEquipmentHandler : MonoBehaviour
         voiceProperty.Info = infoV;
         PlayerJester.AddProperty(voiceProperty);
         
-        IJesterPropertyInfo infoM = new SMask((EMask)Random.Range(1,6));
+        IJesterPropertyInfo infoM = new SMask((EMask)Random.Range(0,5));
         maskProperty.Info = infoM;
         PlayerJester.AddProperty(maskProperty);
         

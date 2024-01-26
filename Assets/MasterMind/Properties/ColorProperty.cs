@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum EColor
 {
-    Blue,
+    Blue = 0,
     Yellow,
     Red,
     Green,
