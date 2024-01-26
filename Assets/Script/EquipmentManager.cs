@@ -70,12 +70,30 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
     IEnumerator KingValidation(int value,int max)
     {
         HideEquipmentUI();
-        cameraManager.ZoomOut();
-        linkedJester.ResetPosition();
-        KingManager.Instance.KingReaction(value,max);
-        yield return new WaitForSeconds(3f);
         
+        cameraManager.ZoomOut();
+
+        KingManager.Instance.KingReaction(value,max);
+        
+        yield return new WaitForSeconds(3f);
+        if (value == max)
+        {
+            GameManager.Instance.FinishRound(true);
+        }
+
         GameManager.Instance.IsInJesterSelection = true;
+        if (value > GameManager.Instance.ValidationThreshold)
+        {
+            linkedJester.ResetPosition();
+        }
+        else
+        {
+            if (FindObjectsOfType<JesterEquipmentHandler>().Length == 1)
+            {
+                GameManager.Instance.FinishRound(false);
+            }
+            linkedJester.Die();
+        }
     }
     public void DisplayEquipmentUI(JesterEquipmentHandler jester)
     {

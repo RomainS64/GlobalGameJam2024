@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 public class Jester
@@ -22,13 +21,11 @@ public class Jester
             {
                 newProperty = false;
             }
-            
         }
         if (newProperty)
         {
             jesterProperties.Add(property);
         }
-
     }
 
     public void SetProperty(IJesterPropertyInfo _info)

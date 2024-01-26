@@ -9,6 +9,7 @@ public struct SRound
 {
     public EAuthorizedProperty[] authorizedProperties;
     public int numberOfJesters;
+    public int validationThreshold;
 }
 public class RoundManager : MonoSingleton<RoundManager>
 {
@@ -22,12 +23,14 @@ public class RoundManager : MonoSingleton<RoundManager>
 
     public void StartRound()
     {
+        
         if(rounds.Count() < currentRound) 
         { 
             return; 
         }
         maxTentative = rounds[currentRound - 1].numberOfJesters;
-
+        GameManager.Instance.ValidationThreshold = rounds[currentRound - 1].validationThreshold;
+        
         jesterMgr = JesterManager.GetInstance();
         if (jesterMgr == null)
         {
@@ -96,7 +99,7 @@ public class RoundManager : MonoSingleton<RoundManager>
 
     public void GoNextRound()
     {
-        currentRound++;
+        if(currentRound != rounds.Length)currentRound++;
         StartRound();
     }
 

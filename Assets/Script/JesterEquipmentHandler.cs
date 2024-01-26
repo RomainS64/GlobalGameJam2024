@@ -52,6 +52,13 @@ public class JesterEquipmentHandler : MonoBehaviour
 
     public void ResetPosition()
     {
+        //TODO, walk to pos
         transform.position = spawner.GetRandomPoint();
+    }
+
+    public void Die()
+    {
+        //TODO: die anim
+        Destroy(gameObject);
     }
 }
