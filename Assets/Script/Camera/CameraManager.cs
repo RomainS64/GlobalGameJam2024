@@ -79,7 +79,6 @@ public class CameraManager : MonoBehaviour
             alpha += Time.deltaTime;
             float speed = speedCamera.Evaluate(alpha / waypointsLenght) * alpha;
             lookUpTarget.position = Vector3.Lerp(lookUpTarget.position, zoomCameraTarget.position, speed);
-            Debug.Log("Alpha " + alpha);
             cinemachineZoomTrackedDolly.m_PathPosition = speed;
             yield return null;
         }
