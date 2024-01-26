@@ -240,17 +240,17 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         {
             if (value == max)
             {
-                AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Reussite");
+                AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Reussite", EAudioSourceType.SFX_JESTER);
             }
             else
             {
-                AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Rire");
+                AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(), "Rire", EAudioSourceType.SFX_JESTER);
             }
         }
         else
         {
             trappeAnimator.SetTrigger("Open");
-            AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Echec");
+            AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Echec", EAudioSourceType.SFX_JESTER);
         }
         yield return new WaitForSeconds(endAnimationTime);
         cameraManager.ZoomOut();

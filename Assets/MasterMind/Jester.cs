@@ -40,6 +40,20 @@ public class Jester
         }
     }
 
+    public IJesterPropertyInfo GetPropertyInfo<T>()
+    {
+        foreach (IJesterProperty curProperty in jesterProperties)
+        {
+            if (curProperty.Info is T)
+            {
+               return curProperty.Info;
+                break;
+            }
+        }
+
+        return null;
+    }
+
     public void RemoveProperty(IJesterProperty property)
     {
         int count = 0;

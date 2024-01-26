@@ -29914,4 +29914,11 @@ AnimationClip:
     flags: 0
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: OnStartedDance
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 757c1be1005d84948afdcd1361e16ae3, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

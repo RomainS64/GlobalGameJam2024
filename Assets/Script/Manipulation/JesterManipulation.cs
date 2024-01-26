@@ -46,6 +46,7 @@ public class JesterManipulation : MonoBehaviour
     }
     private void OnJesterUnSelected()
     {
+        jesterEquipmentHandler.jesterAnimator.SetBool("Falling", false);
         if (Time.time - clickStartTime < clickMaxDuration)
         {
             ClickJester();
@@ -118,6 +119,7 @@ public class JesterManipulation : MonoBehaviour
     }
     private void OnJesterSelected()
     {
+        jesterEquipmentHandler.jesterAnimator.SetBool("Falling", true);
         AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)jesterEquipmentHandler.voiceProperty.Info).Voice.ToString(),"Attrape");
         clickStartTime = Time.time;
         rigidBody.isKinematic = true;

@@ -16,6 +16,8 @@ public class JesterEquipmentHandler : MonoBehaviour
     public FartOrBallKickProperty fartProperty = new FartOrBallKickProperty();
     public DanceOrFallProperty danceProperty = new DanceOrFallProperty();
     public CreamOrRakeProperty rakeProperty = new CreamOrRakeProperty();
+
+    public Animator jesterAnimator;
     private void Start()
     {
         spawner = FindObjectOfType<JesterSpawner>();
@@ -23,7 +25,6 @@ public class JesterEquipmentHandler : MonoBehaviour
         IJesterPropertyInfo info = new SColor((EColor)Random.Range(0,5));
         colorProperty.Info = info;
         PlayerJester.AddProperty(colorProperty);
-
 
         IJesterPropertyInfo infoP = new SNumberOfPompom(Random.Range(0,5));
         pompomProperty.Info = infoP;
@@ -44,7 +45,7 @@ public class JesterEquipmentHandler : MonoBehaviour
         IJesterPropertyInfo infoD = new SDanceOrFall();
         danceProperty.Info = infoD;
         PlayerJester.AddProperty(danceProperty);
-        
+
         IJesterPropertyInfo infoR = new SCreamOrRake();
         rakeProperty.Info = infoR;
         PlayerJester.AddProperty(rakeProperty);
@@ -58,7 +59,38 @@ public class JesterEquipmentHandler : MonoBehaviour
 
     public void DoSpectacle()
     {
-        
+        SFartOrBallKick inforFartOrBallKick = (SFartOrBallKick)(PlayerJester.GetPropertyInfo<SFartOrBallKick>());
+        if (inforFartOrBallKick.Action == EFartOrBallKick.Fart)
+        {
+            jesterAnimator.SetTrigger("Farting");
+        }
+        else if (inforFartOrBallKick.Action == EFartOrBallKick.BallsKick)
+        {
+            jesterAnimator.SetTrigger("HitFoot");
+        }
+
+        SVoice infoVoice = (SVoice)(PlayerJester.GetPropertyInfo<SVoice>());
+
+        SDanceOrFall infoDanceOrFall = (SDanceOrFall)(PlayerJester.GetPropertyInfo<SDanceOrFall>());
+        if (infoDanceOrFall.Action == EDanceOrFall.Dance)
+        {
+            jesterAnimator.SetTrigger("Dansing");
+        }
+        else if (infoDanceOrFall.Action == EDanceOrFall.Fall)
+        {
+            jesterAnimator.SetTrigger("FallToGround");
+            AudioManager.Instance.PlaySongByTypeAndTag(infoVoice.Voice.ToString(), "douleur", EAudioSourceType.SFX_JESTER);
+        }
+
+        SCreamOrRake infoCreamOrRake = (SCreamOrRake)(PlayerJester.GetPropertyInfo<SCreamOrRake>());
+        if (infoCreamOrRake.Action == ECreamOrRake.CreamPie)
+        {
+            jesterAnimator.SetTrigger("DropThePie");
+        }
+        else if (infoCreamOrRake.Action == ECreamOrRake.Rake)
+        {
+
+        }
     }
 
     public void Die()
