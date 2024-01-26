@@ -22,7 +22,10 @@ public class JesterSpawner : MonoSingleton<JesterSpawner>
     {
         for (int i = 0; i < jesterCount; i++)
         {
-            Instantiate(jesterPrefab, GetRandomPoint(), Quaternion.identity);
+            GameObject jester =Instantiate(jesterPrefab, GetRandomPoint(), Quaternion.identity);
+            var animator =jester.GetComponent<JesterEquipmentHandler>().jesterAnimator;
+            animator.ForceStateNormalizedTime(Random.Range(0f,1f));
+            
         }
     }
 

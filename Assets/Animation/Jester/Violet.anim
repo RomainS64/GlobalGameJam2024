@@ -34,7 +34,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.r
-    path: Chapeau01/Chapeau1_3
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau01/Chapeau1_3
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -55,7 +55,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.g
-    path: Chapeau01/Chapeau1_3
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau01/Chapeau1_3
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -76,7 +76,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.b
-    path: Chapeau01/Chapeau1_3
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau01/Chapeau1_3
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -97,7 +97,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.a
-    path: Chapeau01/Chapeau1_3
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau01/Chapeau1_3
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -118,7 +118,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.r
-    path: Chapeau02/Chapeau02_3
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau02/Chapeau02_3
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -139,7 +139,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.g
-    path: Chapeau02/Chapeau02_3
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau02/Chapeau02_3
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -160,7 +160,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.b
-    path: Chapeau02/Chapeau02_3
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau02/Chapeau02_3
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -181,7 +181,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.a
-    path: Chapeau02/Chapeau02_3
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau02/Chapeau02_3
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -202,7 +202,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.r
-    path: Chapeau03/Chapeau03_4
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau03/Chapeau03_4
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -223,7 +223,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.g
-    path: Chapeau03/Chapeau03_4
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau03/Chapeau03_4
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -244,7 +244,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.b
-    path: Chapeau03/Chapeau03_4
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau03/Chapeau03_4
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -265,7 +265,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.a
-    path: Chapeau03/Chapeau03_4
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau03/Chapeau03_4
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -286,7 +286,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.r
-    path: Chapeau04/Chapeau04_1
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau04/Chapeau04_1
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -307,7 +307,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.g
-    path: Chapeau04/Chapeau04_1
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau04/Chapeau04_1
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -328,7 +328,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.b
-    path: Chapeau04/Chapeau04_1
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau04/Chapeau04_1
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -349,7 +349,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.a
-    path: Chapeau04/Chapeau04_1
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau04/Chapeau04_1
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -370,7 +370,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.r
-    path: Chapeau05/Chapeau05_2
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau05/Chapeau05_2
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -391,7 +391,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.g
-    path: Chapeau05/Chapeau05_2
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau05/Chapeau05_2
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -412,7 +412,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.b
-    path: Chapeau05/Chapeau05_2
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau05/Chapeau05_2
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -433,95 +433,20 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.a
-    path: Chapeau05/Chapeau05_2
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau05/Chapeau05_2
     classID: 23
     script: {fileID: 0}
     flags: 0
+  m_PPtrCurves:
   - serializedVersion: 2
     curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.48235294
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: material._Color.r
-    path: Jester (1)/Veste_Low
-    classID: 23
+    - time: 0
+      value: {fileID: 2100000, guid: 5883ac87d4251ba45af16d3f4c1eedf9, type: 2}
+    attribute: m_Materials.Array.data[0]
+    path: Jester_Rig:character_low
+    classID: 137
     script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: material._Color.g
-    path: Jester (1)/Veste_Low
-    classID: 23
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.53333336
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: material._Color.b
-    path: Jester (1)/Veste_Low
-    classID: 23
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: material._Color.a
-    path: Jester (1)/Veste_Low
-    classID: 23
-    script: {fileID: 0}
-    flags: 0
-  m_PPtrCurves: []
+    flags: 2
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -530,7 +455,16 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3050008140
+      path: 2625464089
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 137
+      customType: 21
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 3887784111
       attribute: 1303350129
       script: {fileID: 0}
       typeID: 23
@@ -539,7 +473,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3050008140
+      path: 3887784111
       attribute: 1571785585
       script: {fileID: 0}
       typeID: 23
@@ -548,7 +482,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3050008140
+      path: 3887784111
       attribute: 1840221041
       script: {fileID: 0}
       typeID: 23
@@ -557,7 +491,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3050008140
+      path: 3887784111
       attribute: 2108656497
       script: {fileID: 0}
       typeID: 23
@@ -566,7 +500,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2654748477
+      path: 2809003377
       attribute: 1303350129
       script: {fileID: 0}
       typeID: 23
@@ -575,7 +509,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2654748477
+      path: 2809003377
       attribute: 1571785585
       script: {fileID: 0}
       typeID: 23
@@ -584,7 +518,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2654748477
+      path: 2809003377
       attribute: 1840221041
       script: {fileID: 0}
       typeID: 23
@@ -593,7 +527,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2654748477
+      path: 2809003377
       attribute: 2108656497
       script: {fileID: 0}
       typeID: 23
@@ -602,7 +536,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3691780396
+      path: 3848133472
       attribute: 1303350129
       script: {fileID: 0}
       typeID: 23
@@ -611,7 +545,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3691780396
+      path: 3848133472
       attribute: 1571785585
       script: {fileID: 0}
       typeID: 23
@@ -620,7 +554,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3691780396
+      path: 3848133472
       attribute: 1840221041
       script: {fileID: 0}
       typeID: 23
@@ -629,7 +563,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3691780396
+      path: 3848133472
       attribute: 2108656497
       script: {fileID: 0}
       typeID: 23
@@ -638,7 +572,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3562732926
+      path: 3976937266
       attribute: 1303350129
       script: {fileID: 0}
       typeID: 23
@@ -647,7 +581,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3562732926
+      path: 3976937266
       attribute: 1571785585
       script: {fileID: 0}
       typeID: 23
@@ -656,7 +590,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3562732926
+      path: 3976937266
       attribute: 1840221041
       script: {fileID: 0}
       typeID: 23
@@ -665,7 +599,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3562732926
+      path: 3976937266
       attribute: 2108656497
       script: {fileID: 0}
       typeID: 23
@@ -674,7 +608,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2433163126
+      path: 2824265018
       attribute: 1303350129
       script: {fileID: 0}
       typeID: 23
@@ -683,7 +617,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2433163126
+      path: 2824265018
       attribute: 1571785585
       script: {fileID: 0}
       typeID: 23
@@ -692,7 +626,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2433163126
+      path: 2824265018
       attribute: 1840221041
       script: {fileID: 0}
       typeID: 23
@@ -701,7 +635,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2433163126
+      path: 2824265018
       attribute: 2108656497
       script: {fileID: 0}
       typeID: 23
@@ -709,49 +643,14 @@ AnimationClip:
       isPPtrCurve: 0
       isIntCurve: 0
       isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 1257535461
-      attribute: 1303350129
-      script: {fileID: 0}
-      typeID: 23
-      customType: 22
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 1257535461
-      attribute: 1571785585
-      script: {fileID: 0}
-      typeID: 23
-      customType: 22
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 1257535461
-      attribute: 1840221041
-      script: {fileID: 0}
-      typeID: 23
-      customType: 22
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 1257535461
-      attribute: 2108656497
-      script: {fileID: 0}
-      typeID: 23
-      customType: 22
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    pptrCurveMapping: []
+    pptrCurveMapping:
+    - {fileID: 2100000, guid: 5883ac87d4251ba45af16d3f4c1eedf9, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0
+    m_StopTime: 0.016666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -784,7 +683,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.r
-    path: Chapeau01/Chapeau1_3
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau01/Chapeau1_3
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -805,7 +704,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.g
-    path: Chapeau01/Chapeau1_3
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau01/Chapeau1_3
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -826,7 +725,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.b
-    path: Chapeau01/Chapeau1_3
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau01/Chapeau1_3
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -847,7 +746,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.a
-    path: Chapeau01/Chapeau1_3
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau01/Chapeau1_3
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -868,7 +767,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.r
-    path: Chapeau02/Chapeau02_3
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau02/Chapeau02_3
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -889,7 +788,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.g
-    path: Chapeau02/Chapeau02_3
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau02/Chapeau02_3
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -910,7 +809,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.b
-    path: Chapeau02/Chapeau02_3
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau02/Chapeau02_3
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -931,7 +830,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.a
-    path: Chapeau02/Chapeau02_3
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau02/Chapeau02_3
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -952,7 +851,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.r
-    path: Chapeau03/Chapeau03_4
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau03/Chapeau03_4
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -973,7 +872,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.g
-    path: Chapeau03/Chapeau03_4
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau03/Chapeau03_4
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -994,7 +893,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.b
-    path: Chapeau03/Chapeau03_4
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau03/Chapeau03_4
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -1015,7 +914,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.a
-    path: Chapeau03/Chapeau03_4
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau03/Chapeau03_4
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -1036,7 +935,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.r
-    path: Chapeau04/Chapeau04_1
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau04/Chapeau04_1
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -1057,7 +956,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.g
-    path: Chapeau04/Chapeau04_1
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau04/Chapeau04_1
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -1078,7 +977,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.b
-    path: Chapeau04/Chapeau04_1
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau04/Chapeau04_1
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -1099,7 +998,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.a
-    path: Chapeau04/Chapeau04_1
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau04/Chapeau04_1
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -1120,7 +1019,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.r
-    path: Chapeau05/Chapeau05_2
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau05/Chapeau05_2
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -1141,7 +1040,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.g
-    path: Chapeau05/Chapeau05_2
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau05/Chapeau05_2
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -1162,7 +1061,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.b
-    path: Chapeau05/Chapeau05_2
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau05/Chapeau05_2
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -1183,91 +1082,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Color.a
-    path: Chapeau05/Chapeau05_2
-    classID: 23
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.48235294
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: material._Color.r
-    path: Jester (1)/Veste_Low
-    classID: 23
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: material._Color.g
-    path: Jester (1)/Veste_Low
-    classID: 23
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.53333336
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: material._Color.b
-    path: Jester (1)/Veste_Low
-    classID: 23
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: material._Color.a
-    path: Jester (1)/Veste_Low
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Chapeau05/Chapeau05_2
     classID: 23
     script: {fileID: 0}
     flags: 0

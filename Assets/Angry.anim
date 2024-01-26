@@ -34,7 +34,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Masque
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Masque
+      (3)
     classID: 1
     script: {fileID: 0}
     flags: 0
@@ -55,7 +56,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Masque (1)
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Masque
     classID: 1
     script: {fileID: 0}
     flags: 0
@@ -76,7 +77,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Masque (2)
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Masque
+      (1)
     classID: 1
     script: {fileID: 0}
     flags: 0
@@ -97,7 +99,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Masque (3)
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Masque
+      (2)
     classID: 1
     script: {fileID: 0}
     flags: 0
@@ -118,7 +121,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Masque (4)
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Masque
+      (4)
     classID: 1
     script: {fileID: 0}
     flags: 0
@@ -131,7 +135,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3850367901
+      path: 41828756
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -140,7 +144,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3014164378
+      path: 2894622263
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -149,7 +153,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2558864473
+      path: 810033942
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -158,7 +162,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2174623000
+      path: 459632853
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -167,7 +171,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3470756831
+      path: 1296029523
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -214,7 +218,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Masque
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Masque
+      (3)
     classID: 1
     script: {fileID: 0}
     flags: 0
@@ -235,7 +240,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Masque (1)
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Masque
     classID: 1
     script: {fileID: 0}
     flags: 0
@@ -256,7 +261,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Masque (2)
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Masque
+      (1)
     classID: 1
     script: {fileID: 0}
     flags: 0
@@ -277,7 +283,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Masque (3)
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Masque
+      (2)
     classID: 1
     script: {fileID: 0}
     flags: 0
@@ -298,7 +305,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Masque (4)
+    path: Jester_Rig:hip_jnt/Jester_Rig:torso_jnt/Jester_Rig:shoulders_jnt/Jester_Rig:neck_jnt/Jester_Rig:head_jnt/Masque
+      (4)
     classID: 1
     script: {fileID: 0}
     flags: 0
