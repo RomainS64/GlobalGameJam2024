@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceToFloor: 9
   distanceToWalls: 7
-  distanceMinFromCamera: 3
+  distanceMinFromCamera: 10
   lerpValue: 0.2
   snapLerpValue: 0.1
   offset: {x: 0, y: -1, z: 0}

@@ -384,6 +384,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2642802868214634658}
   - component: {fileID: 7288787077405552912}
+  - component: {fileID: 1176869279005317698}
   m_Layer: 5
   m_Name: RightPart
   m_TagString: Untagged
@@ -431,7 +432,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 0
+  m_Spacing: -50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -439,6 +440,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1176869279005317698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2563598502735405086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f1ce22922d1734c9aaf12121144689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3371566547276299662
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,6 +497,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipmentCanvas: {fileID: 573269494225016121}
+  colorSelectable: {fileID: 0}
+  creamOrRakeSelectable: {fileID: 0}
+  danceOrFallSelectable: {fileID: 0}
+  fartOrBallKickSelctable: {fileID: 0}
+  maskSelectable: {fileID: 0}
+  pompomSelectable: {fileID: 0}
+  voiceSelectable: {fileID: 0}
 --- !u!1 &5769518442999046088
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5337613091768018237}
   - component: {fileID: 6924252484981131943}
+  - component: {fileID: 9195773044025157361}
   m_Layer: 5
   m_Name: LeftPart
   m_TagString: Untagged
@@ -541,7 +562,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 0
+  m_Spacing: -50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -549,6 +570,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &9195773044025157361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5769518442999046088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f1ce22922d1734c9aaf12121144689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8495446073753849219
 GameObject:
   m_ObjectHideFlags: 0
