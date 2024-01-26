@@ -65,7 +65,11 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
     }
     public void Validate()
     {
-        StartCoroutine(KingValidation(JesterManager.GetInstance().CheckCombinaison(linkedJester.PlayerJester),JesterManager.GetInstance().AuthorizedCount()));
+        int combinaison = JesterManager.GetInstance().CheckCombinaison(linkedJester.PlayerJester);
+        int max = JesterManager.GetInstance().AuthorizedCount();
+        Debug.Log("Found : "+combinaison +" / "+max);
+        StartCoroutine(KingValidation(combinaison,max));
+
     }
 
     private float charabiaCourtTime = 1f;
@@ -81,8 +85,9 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         linkedJester.DoSpectacle();
         HideEquipmentUI();
         yield return new WaitForSeconds(isCharabiaLong?charabiaLongTime:charabiaCourtTime);
-        int val = (int)MathF.Ceiling(Mathf.Lerp(0,7,Mathf.InverseLerp(0, value, max)));
-        
+        //int val = (int)MathF.Ceiling(Mathf.Lerp(0,7,Mathf.InverseLerp(0, value, max)));
+        int val = value * 7 / max;
+
         string tag = "";
         switch (val)
         {
@@ -112,6 +117,7 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
                 break;
         }
 
+        Debug.Log(val+" : "+tag);
         AudioManager.Instance.PlaySongByTypeAndTag("King", tag);
         KingManager.Instance.KingReaction(val);
         
