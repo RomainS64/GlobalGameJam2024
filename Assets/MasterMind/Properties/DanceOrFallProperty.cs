@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum EDanceOrFall
 {
-    None = default,
-    Dance,
+    Dance = default,
     Fall
 }
 public struct SDanceOrFall : IJesterPropertyInfo
 {
-    public SDanceOrFall(EDanceOrFall _action = EDanceOrFall.None)
+    public SDanceOrFall(EDanceOrFall _action = EDanceOrFall.Dance)
     {
         Action = _action;
     }

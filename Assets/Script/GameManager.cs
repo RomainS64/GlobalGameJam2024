@@ -18,10 +18,12 @@ public class GameManager : MonoSingleton<GameManager>
         if (success)
         {
             RoundManager.Instance.GoNextRound();
+            AudioManager.Instance.PlaySongByTypeAndTag("other", "victoire", EAudioSourceType.SFX_OTHER);
         }
         else
         {
             RoundManager.Instance.StartRound();
+            AudioManager.Instance.PlaySongByTypeAndTag("other", "defaite", EAudioSourceType.SFX_OTHER);
         }
 
         IsInJesterSelection = true;
