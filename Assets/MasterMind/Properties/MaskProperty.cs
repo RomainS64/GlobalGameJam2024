@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum EMask
-{ 
-    None = default,
-   Sad,
+{
+    Sad,
    Happy,
    Angry,
    Surprised,
@@ -13,7 +12,7 @@ public enum EMask
 }
 public struct SMask : IJesterPropertyInfo
 {
-    public SMask(EMask _mask = EMask.None)
+    public SMask(EMask _mask = EMask.Sad)
     {
         Mask = _mask;
     }

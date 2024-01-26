@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class JesterEquipmentHandler : MonoBehaviour
 {
-    
+    public Animator jesterEquipmentAnimator;
     private JesterSpawner spawner;
     public Jester PlayerJester { get; private set; }
     public ColorProperty colorProperty = new ColorProperty();
@@ -20,12 +20,12 @@ public class JesterEquipmentHandler : MonoBehaviour
     {
         spawner = FindObjectOfType<JesterSpawner>();
         PlayerJester = new Jester();
-        IJesterPropertyInfo info = new SColor();
+        IJesterPropertyInfo info = new SColor((EColor)Random.Range(0,5));
         colorProperty.Info = info;
         PlayerJester.AddProperty(colorProperty);
 
 
-        IJesterPropertyInfo infoP = new SNumberOfPompom();
+        IJesterPropertyInfo infoP = new SNumberOfPompom(Random.Range(0,5));
         pompomProperty.Info = infoP;
         PlayerJester.AddProperty(pompomProperty);
         
@@ -33,7 +33,7 @@ public class JesterEquipmentHandler : MonoBehaviour
         voiceProperty.Info = infoV;
         PlayerJester.AddProperty(voiceProperty);
         
-        IJesterPropertyInfo infoM = new SMask();
+        IJesterPropertyInfo infoM = new SMask((EMask)Random.Range(0,5));
         maskProperty.Info = infoM;
         PlayerJester.AddProperty(maskProperty);
         
@@ -65,5 +65,21 @@ public class JesterEquipmentHandler : MonoBehaviour
     {
         //TODO: die anim
         Destroy(gameObject);
+    }
+
+    public void Rotate()
+    {
+        StartCoroutine(RotateCoroutine(0.5f));
+    }
+
+    public IEnumerator RotateCoroutine(float time)
+    {
+        Vector3 baseRotation = transform.rotation.eulerAngles;
+        for (int i = 0; i < 50; i++)
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 180f / 50f, 0));
+            yield return new WaitForSeconds(time /50f);
+        }
+        transform.rotation = Quaternion.Euler(baseRotation + new Vector3(0, 180, 0));
     }
 }

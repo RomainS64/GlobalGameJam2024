@@ -46,9 +46,11 @@ public struct SFoundInLastRounds
 
 public class EquipmentManager : MonoSingleton<EquipmentManager>
 {
+    [SerializeField] private Animator trappeAnimator;
     [SerializeField] private GameObject equipmentCanvas;
     private CameraManager cameraManager;
     private JesterEquipmentHandler linkedJester = null;
+    
     
     [SerializeField] public UISelectable colorSelectable;
     [SerializeField] public UISelectable creamOrRakeSelectable;
@@ -81,6 +83,7 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         colorSelectable.OnModified += (int i) =>
         {
             linkedJester.PlayerJester.SetProperty(new SColor((EColor)i));
+            linkedJester.jesterEquipmentAnimator.SetInteger("color",i);
         };
             propertiesFoundInRound.Add(nameof(SColor), new SFoundInLastRounds());
         creamOrRakeSelectable.OnModified += (int i) =>
@@ -100,12 +103,14 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
             propertiesFoundInRound.Add(nameof(SFartOrBallKick), new SFoundInLastRounds());
         maskSelectable.OnModified += (int i) =>
         {
-            linkedJester.PlayerJester.SetProperty(new SMask((EMask)i));
+            linkedJester.PlayerJester.SetProperty(new SMask((EMask)i));   
+            linkedJester.jesterEquipmentAnimator.SetInteger("mask",i);
         };
             propertiesFoundInRound.Add(nameof(SMask), new SFoundInLastRounds());
         pompomSelectable.OnModified += (int i) =>
         {
             linkedJester.PlayerJester.SetProperty(new SNumberOfPompom(i));
+            linkedJester.jesterEquipmentAnimator.SetInteger("nbHat",i+1);
         };
             propertiesFoundInRound.Add(nameof(SNumberOfPompom), new SFoundInLastRounds());
         voiceSelectable.OnModified += (int i) =>
@@ -190,6 +195,7 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         bool isCharabiaLong = Random.Range(0,2) == 0;
         AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Charabia"+(isCharabiaLong?"Long":"Court"),EAudioSourceType.SFX_JESTER);
         linkedJester.DoSpectacle();
+        
         HideEquipmentUI();
         yield return new WaitForSeconds(isCharabiaLong?charabiaLongTime:charabiaCourtTime);
         //int val = (int)MathF.Ceiling(Mathf.Lerp(0,7,Mathf.InverseLerp(0, value, max)));
@@ -229,13 +235,22 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         KingManager.Instance.KingReaction(val);
         
         yield return new WaitForSeconds(kingReactionTime);
+        
         if (value > GameManager.Instance.ValidationThreshold)
         {
-            AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Reussite",EAudioSourceType.SFX_JESTER);
+            if (value == max)
+            {
+                AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Reussite");
+            }
+            else
+            {
+                AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Rire");
+            }
         }
         else
         {
-            AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Echec", EAudioSourceType.SFX_JESTER);
+            trappeAnimator.SetTrigger("Open");
+            AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Echec");
         }
         yield return new WaitForSeconds(endAnimationTime);
         cameraManager.ZoomOut();
@@ -261,6 +276,11 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
             linkedJester.Die();
         }
         AudioManager.Instance.ResumeSong(EAudioSourceType.ENVIRONEMENT);
+        
+        if (value <= GameManager.Instance.ValidationThreshold)
+        {
+            trappeAnimator.SetTrigger("Close");
+        }
 
         if (!(kingHumor == KingHumor.Angry))
         {

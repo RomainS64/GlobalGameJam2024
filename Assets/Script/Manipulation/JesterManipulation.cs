@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JesterManipulation : MonoBehaviour
 {
@@ -40,6 +41,7 @@ public class JesterManipulation : MonoBehaviour
         GameManager.Instance.IsInJesterSelection = false;
         cameraManager.ZoomIn();
         yield return new WaitForSeconds(3.2f);
+        jesterEquipmentHandler.Rotate();
         EquipmentManager.Instance.DisplayEquipmentUI(jesterEquipmentHandler);
     }
     private void OnJesterUnSelected()
