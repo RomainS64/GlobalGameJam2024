@@ -74,7 +74,7 @@ public class JesterManager
 
                 case EAuthorizedProperty.Pompom:
                     PompomProperty pompomProperty = new PompomProperty();
-                    IJesterPropertyInfo infoP = new SNumberOfPompom(Random.Range(0, 5));
+                    IJesterPropertyInfo infoP = new SNumberOfPompom(Random.Range(1, 6));
                     Random.InitState((int)(Time.time+Time.deltaTime));
                     pompomProperty.Info = infoP;
                     JesterToFind.AddProperty(pompomProperty);

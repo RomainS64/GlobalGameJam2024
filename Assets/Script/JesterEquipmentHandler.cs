@@ -48,6 +48,9 @@ public class JesterEquipmentHandler : MonoBehaviour
         IJesterPropertyInfo infoR = new SCreamOrRake();
         rakeProperty.Info = infoR;
         PlayerJester.AddProperty(rakeProperty);
+        jesterEquipmentAnimator.SetInteger("color",(int)((SColor)colorProperty.Info).Color);
+        jesterEquipmentAnimator.SetInteger("mask",(int)((SMask)maskProperty.Info).Mask);
+        jesterEquipmentAnimator.SetInteger("nbHat",((SNumberOfPompom)maskProperty.Info).NbPompom);
     }
 
     public void ResetPosition()
