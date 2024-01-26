@@ -70,8 +70,23 @@ public class Jester
                 {
                     tmpJesterProperties.Remove(comparedProperty);
                     goodPropertiesCount++;
+                    if (EquipmentManager.Instance.propertiesFoundInRound.TryGetValue(curProperty.Info.GetType().Name, out SFoundInLastRounds propertyStats))
+                    {
+                        Debug.Log("Dictionnary found");
+                        propertyStats.OnFind();
+                        EquipmentManager.Instance.propertiesFoundInRound[curProperty.Info.GetType().Name] = propertyStats;
+                    }
+                    
                     break;
                 }
+            }
+        }
+        foreach (var item in EquipmentManager.Instance.propertiesFoundInRound)
+        {
+            if(item.Value.isNew) 
+            {
+                EquipmentManager.Instance.OnNewPropertyFound();
+                break;
             }
         }
 
