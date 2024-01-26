@@ -41,7 +41,7 @@ public class JesterManipulation : MonoBehaviour
         GameManager.Instance.IsInJesterSelection = false;
         cameraManager.ZoomIn();
         yield return new WaitForSeconds(3.2f);
-        jesterEquipmentHandler.Rotate();
+        jesterEquipmentHandler.Rotate(180f);
         EquipmentManager.Instance.DisplayEquipmentUI(jesterEquipmentHandler);
     }
     private void OnJesterUnSelected()
