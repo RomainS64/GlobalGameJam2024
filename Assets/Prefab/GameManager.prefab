@@ -60,11 +60,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rounds:
-  - authorizedProperties: 00000000
-    numberOfJesters: 4
+  - authorizedProperties: 0200000000000000
+    numberOfJesters: 10
     validationThreshold: 0
-  - authorizedProperties: 0000000001000000
+  - authorizedProperties: 0200000001000000
+    numberOfJesters: 5
+    validationThreshold: 0
+  - authorizedProperties: 020000000000000005000000
+    numberOfJesters: 10
+    validationThreshold: 0
+  - authorizedProperties: 020000000300000004000000
     numberOfJesters: 7
+    validationThreshold: 0
+  - authorizedProperties: 02000000000000000600000001000000
+    numberOfJesters: 15
+    validationThreshold: 0
+  - authorizedProperties: 02000000010000000500000003000000
+    numberOfJesters: 10
+    validationThreshold: 0
+  - authorizedProperties: 0200000001000000000000000400000005000000
+    numberOfJesters: 15
+    validationThreshold: 0
+  - authorizedProperties: 0200000001000000030000000400000006000000
+    numberOfJesters: 10
+    validationThreshold: 0
+  - authorizedProperties: 0200000000000000030000000100000004000000
+    numberOfJesters: 15
+    validationThreshold: 0
+  - authorizedProperties: 0200000001000000000000000300000005000000
+    numberOfJesters: 10
+    validationThreshold: 0
+  - authorizedProperties: 020000000000000001000000030000000400000005000000
+    numberOfJesters: 20
+    validationThreshold: 0
+  - authorizedProperties: 020000000000000001000000030000000500000006000000
+    numberOfJesters: 15
+    validationThreshold: 0
+  - authorizedProperties: 02000000000000000100000003000000040000000500000006000000
+    numberOfJesters: 20
+    validationThreshold: 0
+  - authorizedProperties: 02000000000000000100000003000000040000000500000006000000
+    numberOfJesters: 15
     validationThreshold: 0
 --- !u!1 &4047533637716337212
 GameObject:
