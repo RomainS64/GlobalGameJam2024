@@ -194,8 +194,8 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         //1 AnimBouffon
         bool isCharabiaLong = Random.Range(0,2) == 0;
         AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Charabia"+(isCharabiaLong?"Long":"Court"),EAudioSourceType.SFX_JESTER);
+        linkedJester.Rotate(180);
         linkedJester.DoSpectacle();
-        
         HideEquipmentUI();
         yield return new WaitForSeconds(isCharabiaLong?charabiaLongTime:charabiaCourtTime);
         //int val = (int)MathF.Ceiling(Mathf.Lerp(0,7,Mathf.InverseLerp(0, value, max)));
@@ -235,7 +235,6 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         KingManager.Instance.KingReaction(val);
         
         yield return new WaitForSeconds(kingReactionTime);
-        
         if (value > GameManager.Instance.ValidationThreshold)
         {
             if (value == max)
@@ -249,6 +248,7 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         }
         else
         {
+            linkedJester.Die();
             trappeAnimator.SetTrigger("Open");
             AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Echec", EAudioSourceType.SFX_JESTER);
         }
@@ -273,7 +273,7 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
             {
                 GameManager.Instance.FinishRound(false);
             }
-            linkedJester.Die();
+            
         }
         AudioManager.Instance.ResumeSong(EAudioSourceType.ENVIRONEMENT);
         

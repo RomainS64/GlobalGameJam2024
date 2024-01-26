@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,7 @@ public struct Selectable
 public class UISelectable : MonoBehaviour
 {
     public Action<int> OnModified;
+    [SerializeField] private TMP_Text text;
     [SerializeField] private Image image;
     [SerializeField] private Sprite lockedSprite;
     [SerializeField] private Selectable[] selectables;
@@ -31,12 +33,14 @@ public class UISelectable : MonoBehaviour
             if (value)
             {
                 image.sprite = lockedSprite;
+                text.text = "Locked";
                 previousButton.gameObject.SetActive(false);
                 nextButton.gameObject.SetActive(false);
             }
             else
             {
                 image.sprite = selectables[selected].sprite;
+                text.text = selectables[selected].label;
                 previousButton.gameObject.SetActive(true);
                 nextButton.gameObject.SetActive(true);
             }
@@ -53,6 +57,7 @@ public class UISelectable : MonoBehaviour
     {
         selected = current;
         image.sprite = selectables[selected].sprite;
+        text.text = selectables[selected].label;
     }
     public void GoNext()
     {
@@ -60,13 +65,14 @@ public class UISelectable : MonoBehaviour
         Debug.Log(gameObject.name + "set to "+selected);
         OnModified?.Invoke(selected);
         image.sprite = selectables[selected].sprite;
+        text.text = selectables[selected].label;
     }
-
     public void GoPrevious()
     {
         selected = selected - 1< 0?selectables.Length-1:selected-1;
         Debug.Log(gameObject.name + "set to "+selected);
         OnModified?.Invoke(selected);
         image.sprite = selectables[selected].sprite;
+        text.text = selectables[selected].label;
     }
 }

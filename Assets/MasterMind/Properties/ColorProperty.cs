@@ -14,6 +14,7 @@ public struct SColor : IJesterPropertyInfo
 {
     public SColor(EColor _color = EColor.Yellow)
     {
+        Debug.Log("Generate "+_color);
         Color = _color;
     }
 

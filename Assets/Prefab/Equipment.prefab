@@ -631,6 +631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfbf538c893ff7f49be931afd332cd30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trappeAnimator: {fileID: 0}
   equipmentCanvas: {fileID: 573269494225016121}
   colorSelectable: {fileID: 0}
   creamOrRakeSelectable: {fileID: 0}
@@ -760,6 +761,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5337613091768018237}
     m_Modifications:
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.data[0].label
+      value: Sad
+      objectReference: {fileID: 0}
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.data[1].label
+      value: Happy
+      objectReference: {fileID: 0}
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.data[2].label
+      value: Angry
+      objectReference: {fileID: 0}
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.data[3].label
+      value: Surprised
+      objectReference: {fileID: 0}
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.data[4].label
+      value: Lover
+      objectReference: {fileID: 0}
     - target: {fileID: 1889778412237720720, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -990,6 +1015,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5337613091768018237}
     m_Modifications:
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.data[0].label
+      value: 1 Pompon
+      objectReference: {fileID: 0}
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.data[1].label
+      value: 2 Pompon
+      objectReference: {fileID: 0}
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.data[2].label
+      value: 3 Pompon
+      objectReference: {fileID: 0}
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.data[3].label
+      value: 4 Pompon
+      objectReference: {fileID: 0}
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.data[4].label
+      value: 5 Pompon
+      objectReference: {fileID: 0}
     - target: {fileID: 1889778412237720720, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1454,6 +1503,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5337613091768018237}
     m_Modifications:
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.data[0].label
+      value: Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.data[1].label
+      value: Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.data[2].label
+      value: Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.data[3].label
+      value: Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.data[4].label
+      value: Purple
+      objectReference: {fileID: 0}
     - target: {fileID: 1889778412237720720, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1672,6 +1745,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2642802868214634658}
     m_Modifications:
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1889778412237720720, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1890,6 +1967,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2642802868214634658}
     m_Modifications:
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1889778412237720720, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2108,6 +2189,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2642802868214634658}
     m_Modifications:
+    - target: {fileID: 837781394578921184, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
+      propertyPath: selectables.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1889778412237720720, guid: 3b3e4237fd4cca44c9027f06a0537936, type: 3}
       propertyPath: m_Sprite
       value: 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -49,6 +50,9 @@ public class JesterEquipmentHandler : MonoBehaviour
         IJesterPropertyInfo infoR = new SCreamOrRake();
         rakeProperty.Info = infoR;
         PlayerJester.AddProperty(rakeProperty);
+        jesterEquipmentAnimator.SetInteger("color",(int)((SColor)colorProperty.Info).Color);
+        jesterEquipmentAnimator.SetInteger("mask",(int)((SMask)maskProperty.Info).Mask);
+        jesterEquipmentAnimator.SetInteger("nbHat",((SNumberOfPompom)pompomProperty.Info).NbPompom);
     }
 
     public void ResetPosition()
@@ -93,25 +97,36 @@ public class JesterEquipmentHandler : MonoBehaviour
         }
     }
 
-    public void Die()
+    public  void Die()
     {
-        //TODO: die anim
+        StartCoroutine(DieCoroutine());
+    }
+
+    public IEnumerator DieCoroutine()
+    {
+        GetComponent<Rigidbody>().isKinematic = true;
+        yield return new WaitForSeconds(0.8f);
+        for (int i = 0; i < 100; i++)
+        {
+            transform.position -= new Vector3(0, 1 * Time.deltaTime*10f, 0);
+            yield return null;
+        }
         Destroy(gameObject);
     }
 
-    public void Rotate()
+    public void Rotate(float angle)
     {
-        StartCoroutine(RotateCoroutine(0.5f));
+        StartCoroutine(RotateCoroutine(0.5f,angle));
     }
 
-    public IEnumerator RotateCoroutine(float time)
+    public IEnumerator RotateCoroutine(float time,float angle)
     {
         Vector3 baseRotation = transform.rotation.eulerAngles;
         for (int i = 0; i < 50; i++)
         {
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 180f / 50f, 0));
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, angle / 50f, 0));
             yield return new WaitForSeconds(time /50f);
         }
-        transform.rotation = Quaternion.Euler(baseRotation + new Vector3(0, 180, 0));
+        transform.rotation = Quaternion.Euler(baseRotation + new Vector3(0, angle, 0));
     }
 }
