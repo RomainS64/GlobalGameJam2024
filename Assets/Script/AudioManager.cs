@@ -34,7 +34,9 @@ public class CustomMap<Key, Value>
 
 public enum EAudioSourceType
 {
-    SFX,
+    SFX_OTHER,
+    SFX_KING,
+    SFX_JESTER,
     ENVIRONEMENT,
     NONE,
 }
