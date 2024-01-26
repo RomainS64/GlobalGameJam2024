@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 5387110802938474963}
   - component: {fileID: 8757027014488933822}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Humor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -639,6 +639,8 @@ MonoBehaviour:
   maskSelectable: {fileID: 0}
   pompomSelectable: {fileID: 0}
   voiceSelectable: {fileID: 0}
+  textHumor: {fileID: 8757027014488933822}
+  kingHumor: 0
 --- !u!1 &5769518442999046088
 GameObject:
   m_ObjectHideFlags: 0

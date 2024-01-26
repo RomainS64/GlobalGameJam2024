@@ -61,7 +61,7 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
 
     public Dictionary<string, SFoundInLastRounds> propertiesFoundInRound;
     public KingHumor kingHumor;
-    
+    private Dictionary<string, SFoundInLastRounds> propertiesFoundInPreviousRound;
 
     public void LockAllSelectables()
     {
@@ -170,33 +170,12 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
 
     public void Validate()
     {
-        Dictionary<string, SFoundInLastRounds> propertiesFoundInPreviousRound = new Dictionary<string, SFoundInLastRounds>(propertiesFoundInRound);
+        propertiesFoundInPreviousRound = new Dictionary<string, SFoundInLastRounds>(propertiesFoundInRound);
         int combinaison = JesterManager.GetInstance().CheckCombinaison(linkedJester.PlayerJester);
         RoundManager.Instance.currentTentative++;
         int max = JesterManager.GetInstance().AuthorizedCount();
         Debug.Log("Found : "+combinaison +" / "+max);
         StartCoroutine(KingValidation(combinaison,max));
-
-        if (!(kingHumor == KingHumor.Angry))
-        {
-            if (NoNewPropertyFoundAfterRounds(propertiesFoundInPreviousRound))
-            {
-                switch (kingHumor)
-                {
-                    case KingHumor.Happy:
-                        kingHumor = KingHumor.Bored;
-                        textHumor.SetText("The King is bored");
-                        GameManager.Instance.ValidationThreshold = max / 2;
-                        break;
-                    case KingHumor.Bored:
-                        kingHumor = KingHumor.Angry;
-                        textHumor.SetText("The King is angry");
-                        GameManager.Instance.ValidationThreshold = max;
-                        break;
-                }
-                ResetLastRoundsData();
-            }
-        }
 
     }
 
@@ -282,6 +261,27 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
             linkedJester.Die();
         }
         AudioManager.Instance.ResumeSong(EAudioSourceType.ENVIRONEMENT);
+
+        if (!(kingHumor == KingHumor.Angry))
+        {
+            if (NoNewPropertyFoundAfterRounds(propertiesFoundInPreviousRound))
+            {
+                switch (kingHumor)
+                {
+                    case KingHumor.Happy:
+                        kingHumor = KingHumor.Bored;
+                        textHumor.SetText("The King is bored");
+                        GameManager.Instance.ValidationThreshold = max / 2;
+                        break;
+                    case KingHumor.Bored:
+                        kingHumor = KingHumor.Angry;
+                        textHumor.SetText("The King is angry");
+                        GameManager.Instance.ValidationThreshold = max;
+                        break;
+                }
+                ResetLastRoundsData();
+            }
+        }
     }
     public void DisplayEquipmentUI(JesterEquipmentHandler jester)
     {
