@@ -5,6 +5,12 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
+public struct Test
+{
+    private bool Turn1;
+    private bool Turn2;
+    private bool Turn3;
+}
 public class EquipmentManager : MonoSingleton<EquipmentManager>
 {
     [SerializeField] private GameObject equipmentCanvas;
@@ -124,7 +130,15 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         yield return new WaitForSeconds(kingReactionTime);
         if (value > GameManager.Instance.ValidationThreshold)
         {
-            AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Reussite");
+            if (value == max)
+            {
+                AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Reussite");
+            }
+            else
+            {
+                AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Rire");
+            }
+            
         }
         else
         {
