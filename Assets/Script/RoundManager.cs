@@ -14,7 +14,7 @@ public struct SRound
 public class RoundManager : MonoSingleton<RoundManager>
 {
     private int currentRound = 1;
-    private int currentTentative = 0;
+    public int currentTentative = 0;
     private int maxTentative;
     public SRound[] rounds;
 
@@ -47,7 +47,10 @@ public class RoundManager : MonoSingleton<RoundManager>
 
         jesterMgr.ResetAuthorizedProperties();
         equipmentManager.LockAllSelectables();
-        
+        equipmentManager.kingHumor = KingHumor.Happy;
+        equipmentManager.textHumor.SetText("The King is happy");
+        GameManager.Instance.ValidationThreshold = 0;
+
         //Define what property to use for the round
         foreach (EAuthorizedProperty property in rounds[currentRound - 1].authorizedProperties)
         {
