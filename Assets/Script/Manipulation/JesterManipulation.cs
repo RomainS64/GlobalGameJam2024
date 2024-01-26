@@ -59,11 +59,13 @@ public class JesterManipulation : MonoBehaviour
             transform.position = linkedSnapPoint.transform.position;
             StartCoroutine(GoToSelection());
         }
+        AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)jesterEquipmentHandler.voiceProperty.Info).Voice.ToString(),"Lache");
+
     }
 
     private void ClickJester()
     {
-        Debug.Log("Click Jester !");
+        AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)jesterEquipmentHandler.voiceProperty.Info).Voice.ToString(),"Douleur");
     }
     IEnumerator FollowMouse()
     {
@@ -114,6 +116,7 @@ public class JesterManipulation : MonoBehaviour
     }
     private void OnJesterSelected()
     {
+        AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)jesterEquipmentHandler.voiceProperty.Info).Voice.ToString(),"Attrape");
         clickStartTime = Time.time;
         rigidBody.isKinematic = true;
         if (followMouseCoroutine != null)

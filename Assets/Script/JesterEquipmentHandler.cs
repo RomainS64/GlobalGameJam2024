@@ -29,7 +29,7 @@ public class JesterEquipmentHandler : MonoBehaviour
         pompomProperty.Info = infoP;
         PlayerJester.AddProperty(pompomProperty);
         
-        IJesterPropertyInfo infoV = new SVoice(EVoice.Neutral);
+        IJesterPropertyInfo infoV = new SVoice((EVoice)Random.Range(0,3));
         voiceProperty.Info = infoV;
         PlayerJester.AddProperty(voiceProperty);
         
@@ -54,6 +54,11 @@ public class JesterEquipmentHandler : MonoBehaviour
     {
         //TODO, walk to pos
         transform.position = spawner.GetRandomPoint();
+    }
+
+    public void DoSpectacle()
+    {
+        
     }
 
     public void Die()

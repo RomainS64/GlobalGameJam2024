@@ -2,17 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 [ExecuteAlways]
-public class VerticalLayoutUpdate : MonoBehaviour
+public class TopUIPositionUpdater : MonoBehaviour
 {
-    private VerticalLayoutGroup layoutGroup;
-
+    private RectTransform rect;
     private bool isPortrait = false;
+
     private void Start()
     {
-        layoutGroup = GetComponent<VerticalLayoutGroup>();
+        rect = GetComponent<RectTransform>();
     }
 
     void Update()
@@ -20,13 +19,14 @@ public class VerticalLayoutUpdate : MonoBehaviour
         if (Screen.height > Screen.width && !isPortrait)
         {
             isPortrait = true;
-            layoutGroup.spacing = -250;
+            rect.anchoredPosition = new Vector2(rect.anchoredPosition.x,-250);
+
         }
 
         if (Screen.height <= Screen.width && isPortrait)
         {
             isPortrait = false;
-            layoutGroup.spacing = -50;
+            rect.anchoredPosition = new Vector2(rect.anchoredPosition.x,-100);
         }
     }
 }

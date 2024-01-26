@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class EquipmentManager : MonoSingleton<EquipmentManager>
 {
@@ -67,15 +68,64 @@ public class EquipmentManager : MonoSingleton<EquipmentManager>
         StartCoroutine(KingValidation(JesterManager.GetInstance().CheckCombinaison(linkedJester.PlayerJester),JesterManager.GetInstance().AuthorizedCount()));
     }
 
+    private float charabiaCourtTime = 1f;
+    private float charabiaLongTime = 3f;
+    private float kingReactionTime = 2f;
+    private float endAnimationTime = 2f;
     IEnumerator KingValidation(int value,int max)
     {
+        //1 AnimBouffon
+        bool isCharabiaLong = Random.Range(0,2) == 0;
+        AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Charabia"+(isCharabiaLong?"Long":"Court"));
+        linkedJester.DoSpectacle();
         HideEquipmentUI();
+        yield return new WaitForSeconds(isCharabiaLong?charabiaLongTime:charabiaCourtTime);
+        int val = (int)MathF.Floor(Mathf.Lerp(0,7,Mathf.InverseLerp(0, value, max)));
+        
+        string tag = "";
+        switch (val)
+        {
+            case 0:
+                tag = "Insatisfait";
+                break;
+            case 1:
+                tag = "Indice1";
+                break;
+            case 2:
+                tag = "Indice2";
+                break;
+            case 3:
+                tag = "Indice3";
+                break;
+            case 4:
+                tag = "Indice4";
+                break;
+            case 5:
+                tag = "Indice5";
+                break;
+            case 6:
+                tag = "Indice6";
+                break;
+            case 7:
+                tag = "Heureux";
+                break;
+        }
 
+        AudioManager.Instance.PlaySongByTypeAndTag("King", tag);
+        KingManager.Instance.KingReaction(val);
+        
+        yield return new WaitForSeconds(kingReactionTime);
+        if (value > GameManager.Instance.ValidationThreshold)
+        {
+            AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Reussite");
+        }
+        else
+        {
+            AudioManager.Instance.PlaySongByTypeAndTag(((SVoice)linkedJester.voiceProperty.Info).Voice.ToString(),"Echec");
+        }
+        yield return new WaitForSeconds(endAnimationTime);
         cameraManager.ZoomOut();
-
-        KingManager.Instance.KingReaction(value, max);
-
-        yield return new WaitForSeconds(3f);
+        
         if (value == max)
         {
             GameManager.Instance.FinishRound(true);

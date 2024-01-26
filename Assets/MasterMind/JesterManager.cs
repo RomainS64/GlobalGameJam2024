@@ -67,6 +67,7 @@ public class JesterManager
                 case EAuthorizedProperty.Color:
                     ColorProperty colorProperty = new ColorProperty();
                     IJesterPropertyInfo infoC = new SColor((EColor)Random.Range(1,5));
+                    Random.InitState(System.Environment.TickCount);
                     colorProperty.Info = infoC;
                     JesterToFind.AddProperty(colorProperty);
                     break;
@@ -74,6 +75,7 @@ public class JesterManager
                 case EAuthorizedProperty.Pompom:
                     PompomProperty pompomProperty = new PompomProperty();
                     IJesterPropertyInfo infoP = new SNumberOfPompom(Random.Range(1, 5));
+                    Random.InitState((int)(Time.time+Time.deltaTime));
                     pompomProperty.Info = infoP;
                     JesterToFind.AddProperty(pompomProperty);
                     break;
@@ -81,6 +83,7 @@ public class JesterManager
                 case EAuthorizedProperty.Voice:
                     VoiceProperty voiceProperty = new VoiceProperty();
                     IJesterPropertyInfo infoV = new SVoice((EVoice)Random.Range(0, 2));
+                    Random.InitState((int)Time.time);
                     voiceProperty.Info = infoV;
                     JesterToFind.AddProperty(voiceProperty);
                     break;
@@ -88,6 +91,7 @@ public class JesterManager
                 case EAuthorizedProperty.Mask:
                     MaskProperty maskProperty = new MaskProperty();
                     IJesterPropertyInfo infoM = new SMask((EMask)Random.Range(1, 5));
+                    Random.InitState(Random.Range(0,99999));
                     maskProperty.Info = infoM;
                     JesterToFind.AddProperty(maskProperty);
                     break;
@@ -95,6 +99,7 @@ public class JesterManager
                 case EAuthorizedProperty.FartOrBallsKick:
                     FartOrBallKickProperty fartProperty = new FartOrBallKickProperty();
                     IJesterPropertyInfo infoF = new SFartOrBallKick((EFartOrBallKick)Random.Range(1, 2));
+                    Random.InitState(Random.Range(0,99999));
                     fartProperty.Info = infoF;
                     JesterToFind.AddProperty(fartProperty);
                     break;
@@ -102,6 +107,7 @@ public class JesterManager
                 case EAuthorizedProperty.DanceOrFall:
                     DanceOrFallProperty danceProperty = new DanceOrFallProperty();
                     IJesterPropertyInfo infoD = new SDanceOrFall((EDanceOrFall)Random.Range(1, 2));
+                    Random.InitState(Random.Range(0,99999));
                     danceProperty.Info = infoD;
                     JesterToFind.AddProperty(danceProperty);
                     break;
@@ -109,6 +115,7 @@ public class JesterManager
                 case EAuthorizedProperty.CreamOrRake:
                     CreamOrRakeProperty rakeProperty = new CreamOrRakeProperty();
                     IJesterPropertyInfo infoR = new SCreamOrRake((ECreamOrRake)Random.Range(1, 2));
+                    Random.InitState(Random.Range(0,99999));
                     rakeProperty.Info = infoR;
                     JesterToFind.AddProperty(rakeProperty);
                     break;
